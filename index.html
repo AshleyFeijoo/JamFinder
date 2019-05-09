@@ -2,21 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JamFinder</title>
 
     <!-- Firebase config js -->
-    <script src="assets/js/firebaseConfig.js"></script>
+    <!-- <script src="assets/js/firebaseConfig.js"></script> -->
 
     <link rel= stylesheet href= "https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
 
 </head>
 <body>
+    <div class="navbar-fixed" >
+
+        <nav>
+            <div class="nav-wrapper blue-grey darken-1">    
+            <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
+                <ul id="nav" class="right hide-on-small-only" style="margin-right: 10%">
+                <input type="textbox" id="searchBox"></input> 
+                <a id="searchButton" class="waves-effect waves-light btn">
+                    <i class="material-icons left">search</i>Jam On</a>
+                </ul>
+            </div>
+        </nav>
+    </div>
     
+    <div class="container">
+        <div class="row">
+            <div class="col md-4"></div>
+            <div class="col md-4"></div>
+            <div class="col md-4"></div>
+        </div>
+    </div>
+        
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
