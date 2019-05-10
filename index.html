@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JamFinder</title>
+
+    <!-- Firebase config js -->
+    <!-- <script src="assets/js/firebaseConfig.js"></script> -->
+
+    <link rel= stylesheet href= "https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+<body>
+    <div class="navbar-fixed" >
+
+        <nav>
+            <div class="nav-wrapper blue-grey darken-1">    
+            <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
+                <ul id="nav" class="right hide-on-small-only" style="margin-right: 10%">
+                <input type="textbox" id="searchBox"></input> 
+                <a id="searchButton" class="waves-effect waves-light btn">
+                    <i class="material-icons left">search</i>Jam On</a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col md-4">
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!">three</a></li>
+                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                </ul>                  
+            </div>
+            <div class="col md-4">
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Drop Me!</a>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdown2' class='dropdown-content'>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!">three</a></li>
+                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                </ul>
+                  
+            </div>
+                
+            <div class="col md-4">
+                    <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Drop Me!</a>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown3' class='dropdown-content'>
+                      <li><a href="#!">one</a></li>
+                      <li><a href="#!">two</a></li>
+                      <li class="divider" tabindex="-1"></li>
+                      <li><a href="#!">three</a></li>
+                      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                    </ul>                  
+            </div>
+
+            <div class="row">
+                <div class="col md-8" id="youTubeDiv">Area for youtube vid</div>
+                <div class="col md-4" id="infoDiv">Band, Concert, Video</div>
+            </div>
+
+            <div class="row">
+                <div class="col md-12">Results</div>
+            </div>
+
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+        
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- materialze js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Firebase Reference -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+</body>
+</html>
