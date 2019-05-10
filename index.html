@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JamFinder</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel=stylesheet href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper blue-grey darken-1">
+                    <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
+                    <ul id="nav" class="right hide-on-small-only" style="margin-right: 10%">
+                        <input type="textbox" id="searchBox"></input>
+                        <a id="searchButton" class="waves-effect waves-light btn">
+                            <i class="material-icons left">search</i>Jam On</a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- NAV WRAPPER -->
+        <div class="navbar-fixed ">
+            <nav class="nav-wrapper valign-wrapper blue-grey lighten-2">
+                <div class="row main-content">
+                    <div class="col m4">
+                        <a class="dropdown-trigger btn dropdownItem" href="#" data-target="dropdown1">
+                            <p>Drop Me!</p>
+                        </a>
+                        <ul id="dropdown1" class="dropdown-content" tabindex="0">
+                            <li tabindex="0"><a href="#!">one</a></li>
+                            <li tabindex="0"><a href="#!">two</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li tabindex="0"><a href="#!">three</a></li>
+                            <li tabindex="0"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                            <li tabindex="0"><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                        </ul>
+                        <!-- Dropdown Structure -->
+                    </div>
+                    <div class="col m4">
+                        <a class=" dropdown-trigger btn dropdownItem" href="#" data-target="dropdown2">
+                            <p>Drop Me!</p>
+                        </a>
+                        <ul id="dropdown2" class="dropdown-content" tabindex="0">
+                            <li tabindex="0"><a href="#!">one</a></li>
+                            <li tabindex="0"><a href="#!">two</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li tabindex="0"><a href="#!">three</a></li>
+                            <li tabindex="0"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                            <li tabindex="0"><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                        </ul>
+                        <!-- Dropdown Structure -->
+
+                    </div>
+                    <div class="col m4">
+                        <a class="dropdown-trigger btn dropdownItem" href="#" data-target="dropdown3">Drop Me!</a>
+                        <ul id="dropdown3" class="dropdown-content" tabindex="0">
+                            <li tabindex="0"><a href="#!">one</a></li>
+                            <li tabindex="0"><a href="#!">two</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li tabindex="0"><a href="#!">three</a></li>
+                            <li tabindex="0"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                            <li tabindex="0"><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                        </ul>
+                        <!-- Dropdown Structure -->
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- container -->
+    <div class="container">
+        <!-- ROW 2-->
+        <div class="row">
+            <div class="col l6 s12 m12 center">
+                <div class="card blue-grey lighten-3">
+                    <div class="responsive-video card-content white-text">
+                        <iframe width="400" height="215" src="https://www.youtube.com/embed/UfQHEpf2q8k" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 s12 m12">
+                <div class="card blue-grey lighten-3">
+                    <div class="card-content white-text">
+                        <ul text-black>
+                            <li>Band Name:</li>
+                            <li>Date:</li>
+                            <li>Price:</li>
+                            <li>Genre:</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12">
+                <div class="card blue-grey lighten-3">
+                    <div class="card-title">
+                        <h3 class="col l6 s12 results white-text align-center">Results:</h1>
+                            <h4 class="col l6  s12 white-text genreResults">Genre:</h1>
+                    </div>
+                    <div class="card-content white-text">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th id="location">Location</th>
+                                    <th id="date">Date</th>
+                                    <th id="bandName">Band/Artist Name</th>
+                                    <th id="price">Item Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alvin</td>
+                                    <td>Eclair</td>
+                                    <td>.87</td>
+                                </tr>
+                                <tr>
+                                    <td>Alan</td>
+                                    <td>Jellybean</td>
+                                    <td>.76</td>
+                                </tr>
+                                <tr>
+                                    <td>Jonathan</td>
+                                    <td>Lollipop</td>
+                                    <td>.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- CONTAINER WRAPPER -->
+
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- materialze js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+</body>
+
+</html>
