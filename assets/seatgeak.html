@@ -1,0 +1,33 @@
+<head>
+    <meta charset="utf-8">
+    <title>Single AJAX</title>
+  </head>
+  
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+      var client_id = "MTEyMTc0NzN8MTU1NzM0NDE0OS40OA";
+      var client_secret = "d6005bfa21771638a4b460529bda0a83178316ba8c20d7ed24f0a383973f6246";
+      var queryURL = "https://api.seatgeek.com/2/genres/?client_id=" + client_id + "&client_secret=" + client_secret; 
+  
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+          console.log(response);
+          for (i=0; i < 21; i++)
+          console.log(response.genres[i].name);
+      });
+  // ---------------------------------------------------------
+  
+      console.log("This console.log will probably happen first because of asynchronicity.");
+      var x = 2;
+      var y = 10;
+      var z = 13;
+      console.log("We can also assign some variables and do some arithmetic while we wait too: 2 + 10 + 13 = ", x + y + z);
+    </script>
+  
+  </body>
+  
+  </html>
