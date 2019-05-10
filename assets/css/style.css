@@ -1,0 +1,8 @@
+.border{
+    border:red 1px solid;
+}
+
+.col {
+    padding:20px!important;
+    box-sizing:border-box!important;
+  }
