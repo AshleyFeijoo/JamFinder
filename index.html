@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JamFinder</title>
 
-    <!-- Firebase config js -->
-    <!-- <script src="assets/js/firebaseConfig.js"></script> -->
-
-    <link rel= stylesheet href= "https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel=stylesheet href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -16,40 +15,64 @@
 
 
 </head>
-<body>
-    <div class="navbar-fixed" >
 
+<body>
+    <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper blue-grey darken-1">    
-            <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
+            <div class="nav-wrapper blue-grey darken-1">
+                <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
                 <ul id="nav" class="right hide-on-small-only" style="margin-right: 10%">
-                <input type="textbox" id="searchBox"></input> 
-                <a id="searchButton" class="waves-effect waves-light btn">
-                    <i class="material-icons left">search</i>Jam On</a>
+                    <input type="textbox" id="searchBox"></input>
+                    <a id="searchButton" class="waves-effect waves-light btn">
+                        <i class="material-icons left">search</i>Jam On</a>
                 </ul>
             </div>
         </nav>
     </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col md-4">
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+    <!-- NAV WRAPPER -->
+    <nav>
+        <div class="nav-wrapper blue-grey lighten-3 navflex">
+            <div class="col sm-4">
+                <a class='dropdown-trigger btn dropdownItem' href='#' data-target='dropdown1'>Dates </a>
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
+                    <li><a href="#!">All Dates</a></li>
                     <li class="divider" tabindex="-1"></li>
-                    <li><a href="#!">three</a></li>
-                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                </ul>                  
+                    <li><a href="#!">Today</a></li>
+                    <li><a href="#!">Tomorrow</a></li>
+                    <li><a href="#!">This Weekend</a></li>
+                    <li><a href="#!">Next Week</a></li>
+                    <li><a href="#!">Next Month</a></li>
+                </ul>
             </div>
-            <div class="col md-4">
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Drop Me!</a>
-
+            <div class="col s4">
+                <a class='dropdown-trigger btn dropdownItem' href='#' data-target='dropdown2'>Genre</a>
                 <!-- Dropdown Structure -->
                 <ul id='dropdown2' class='dropdown-content'>
+                    <li><a href="#!">All Genres</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!">Alternative</a></li>
+                    <li><a href="#!">Blues</a></li>
+                    <li><a href="#!">Christian/Gospel</a></li>
+                    <li><a href="#!">Classical</a></li>
+                    <li><a href="#!">Country</a></li>
+                    <li><a href="#!">Electronic</a></li>
+                    <li><a href="#!">Folk</a></li>
+                    <li><a href="#!">Hip Hop</a></li>
+                    <li><a href="#!">Jazz</a></li>
+                    <li><a href="#!">Latin</a></li>
+                    <li><a href="#!">Metal</a></li>
+                    <li><a href="#!">Pop</a></li>
+                    <li><a href="#!">Punk</a></li>
+                    <li><a href="#!">R&B/Soul</a></li>
+                    <li><a href="#!">Reggae</a></li>
+                    <li><a href="#!">Rock</a></li>
+                </ul>
+            </div>
+            <div class="col sm-4">
+                <a class='dropdown-trigger btn dropdownItem' href='#' data-target='dropdown3'>Drop Me!</a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown3' class='dropdown-content'>
                     <li><a href="#!">one</a></li>
                     <li><a href="#!">two</a></li>
                     <li class="divider" tabindex="-1"></li>
@@ -57,53 +80,88 @@
                     <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
                     <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
                 </ul>
-                  
-            </div>
-                
-            <div class="col md-4">
-                    <a class='dropdown-trigger btn' href='#' data-target='dropdown3'>Drop Me!</a>
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown3' class='dropdown-content'>
-                      <li><a href="#!">one</a></li>
-                      <li><a href="#!">two</a></li>
-                      <li class="divider" tabindex="-1"></li>
-                      <li><a href="#!">three</a></li>
-                      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                    </ul>                  
             </div>
         </div>
-    
-
-            <div class="container">
-                <div class="row">
-                    <div class="col md-8" id="youTubeDiv">
-                        <p>Area for youtube vid</p>
-                        <img src="https://picsum.photos/id/102/400/250">
-                    </div>
-                    <div class="col md-4" id="infoDiv">
-                        <p>Band, Concert, Video, info</p>
-                    </div>
+    </nav>
+    <!-- NAV WRAPPER -->
+    <div class="container">
+        <!-- ROW 2-->
+        <div class="row center-align section">
+            <div class="col lg-6">
+            <div class="card blue-grey lighten-3">
+                <div class="card-content white-text">
+                    <iframe width="400" height="215" src="https://www.youtube.com/embed/UfQHEpf2q8k" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
+            </div>
+            </div>
+            <div class="col lg-6">
+                <div class="card blue-grey lighten-3">
+                    <div class="card-content white-text">
+                        <ul class="tabs tabs-fixed-width">
+                            <ul text-black>
+                                <li>Band Name:</li>
+                                <li>Band Name:</li>>
+                                <li>Band Name:</li>>
 
-                <div class="row">
-                    <div class="col md-12">Results</div>
-                </div>
-
-                <div class="row">
-
+                            </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        
+<!-- ROW 2 -->
+        <div class="row">
+            <div class="card blue-grey lighten-3">
+                    <div class="card-title">
+                            <h1 class="results">Results:</h1>
+                        </div>
+                <div class="card-content white-text">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th id="location">Location</th>
+                                <th id="date">Date</th>
+                                <th id="bandName">Band/Artist Name</th>
+                                <th id="price">Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alvin</td>
+                                <td>Eclair</td>
+                                <td>.87</td>
+                            </tr>
+                            <tr>
+                                <td>Alan</td>
+                                <td>Jellybean</td>
+                                <td>.76</td>
+                            </tr>
+                            <tr>
+                                <td>Jonathan</td>
+                                <td>Lollipop</td>
+                                <td>.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+    <!-- CONTAINER WRAPPER -->
+ 
 
-<!-- jquery -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<!-- materialze js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- Firebase Reference -->
-<!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script> -->
-<script src="assets/javascript/app.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- materialze js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,19 @@
+.dropdownItem{
+    margin-right: 2em;
+}
+
+.navflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    /* padding-left: 10px; */
+}
+
+.main-content{
+    display:flex;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
