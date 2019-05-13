@@ -87,16 +87,8 @@
           $("table tbody").append(tableLineData);
         };
 
-        
-      // }
-
-      // updateMusicTable(0);
-
-      // updateMusicTable(tableLineData);
-      // we have our response now we want to set variable to the div ids
     });
     
-<<<<<<< HEAD
   };
 
   // calling our function that spells out our queryURL
@@ -104,11 +96,4 @@
 
   // updateMusicTable(tableLineData);
 
-     
-  
-
-  
-=======
-  }); //end document ready
-     
->>>>>>> d651ba080e0c58b200ef73d5a4776f3004f67822
+    

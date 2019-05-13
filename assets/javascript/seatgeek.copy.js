@@ -2,13 +2,7 @@
   // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
   var latStart;
   var lonStart;
-
-  navigator.geolocation.getCurrentPosition(function(location) {
-    latStart = (location.coords.latitude);
-    lonStart = (location.coords.longitude);
-    console.log(latStart);
-    console.log(lonStart);
-  });    
+  
 
   function getConcertByLatLon(lat, lon, range, ticketPrice, datetime){
 
@@ -55,17 +49,30 @@
           // console.log(response.events[0].datetime_local);
           var eventLocalTime = response.events[i].datetime_local;
           // console.log(response.events[0].stats.average_price);
-          var eventAveragePrice = response.events[i].stats.average_price;
-          var tableLineData = "<tr><td>" + venueName + "</td><td>" + eventLocalTime + "</td><td>" + eventTitle + "</td><td>" + "$" + eventAveragePrice + "</td><td>";
+          var eventAveragePrice = response.events[i].stats.median_price;
+          // if statement to replace null
+          if (eventAveragePrice === null){
+            eventAveragePrice = "Price Un-Listed";
+          } else {
+            eventAveragePrice = "$" + response.events[i].stats.average_price;
+          }
+          var tableLineData = "<tr><td>" + venueName + "</td><td>" + eventLocalTime + "</td><td>" + eventTitle + "</td><td>" + eventAveragePrice + "</td><td>";
           $("table tbody").append(tableLineData);
+          
         };
 
     });
     
   };
   // calling our function that spells out our queryURL
-  getConcertByLatLon("44.98", "-94.18", "20mi", "200", "2019-05-17");
-
+  
+  navigator.geolocation.getCurrentPosition(function(location) {
+    latStart = (location.coords.latitude);
+    lonStart = (location.coords.longitude);
+    getConcertByLatLon(latStart, lonStart, "25mi", "50", "2019-05-17");
+    console.log(latStart);
+    console.log(lonStart);
+  });
   // getConcertByLatLon(latStart, LongStart, radius, price, datetime)
   
 
