@@ -1,0 +1,52 @@
+body{
+    margin: 0 auto!important;
+}
+    .flexy {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-evenly;
+        align-items: center;
+        padding-left: 1px;
+    }
+    
+    /* .row.main-content {
+        margin: 0 auto;
+    } */
+    nav.nav-wrapper.valign-wrapper.blue-grey.lighten-2 {
+        z-index: 10000;
+        padding-top:1em;
+    }
+
+    .card .card-title {
+        margin: 0 auto!important;
+        
+    }
+    .select-wrapper input.select-dropdown{
+        border-bottom: none;
+    }
+
+
+    input#searchBox {
+        height: 2.5em;
+    }
+
+.searchOne{
+    float: left;
+
+}
+
+.searchTwo{
+    float: right;
+    
+}
+
+.leftMain {
+    margin-right: 0;
+    margin-left: 25%;
+}
+
+.rightMain {
+    margin-left: 0;
+    margin-right: 50%;
+}
