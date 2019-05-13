@@ -2,40 +2,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JamFinder</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel=stylesheet href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>JamFinder</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    
+    
 </head>
 
-<body>
+<body class="white-text">
     <header>
         <div class="navbar-fixed">
             <nav>
-                <div class="nav-wrapper blue-grey darken-1">
+                <div class="nav-wrapper teal z-depth-1-half darken-1">
                     <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
-                    <ul id="nav" class="right hide-on-small-only" style="margin-right: 10%">
-                        <input type="textbox" id="searchBox"></input>
-                        <a id="searchButton" class="waves-effect waves-light btn">
-                            <i class="material-icons left">search</i>Jam On</a>
-                    </ul>
+                    
                 </div>
             </nav>
         </div>
         <!-- NAV WRAPPER -->
-        <div class="navbar-fixed ">
+        <!-- <div class="navbar ">
             <nav class="nav-wrapper valign-wrapper blue-grey lighten-2">
-                <div class="row main-content">
-                    <div class="col m4">
+                <div class="row main-content left leftMain">
+                    <div class="col m4 input-field">
                         <a class="dropdown-trigger btn dropdownItem" href="#" data-target="dropdown1">
                             <p>Dates</p>
                         </a>
@@ -48,7 +44,6 @@
                                 <li><a href="#!">Next Week</a></li>
                                 <li><a href="#!">Next Month</a></li>
                             </ul>
-                        <!-- Dropdown Structure -->
                     </div>
                     <div class="col m4">
                         <a class=" dropdown-trigger btn dropdownItem" href="#" data-target="dropdown2">
@@ -74,10 +69,9 @@
                                 <li><a href="#!">Reggae</a></li>
                                 <li><a href="#!">Rock</a></li>
                             </ul>
-                        <!-- Dropdown Structure -->
                     </div>
                     <div class="col m4">
-                        <a class="dropdown-trigger btn dropdownItem" href="#" data-target="dropdown3">Drop Me!</a>
+                        <a class="dropdown-trigger btn dropdownItem" href="#" data-target="dropdown3"><p>Drop</p></a>
                         <ul id="dropdown3" class="dropdown-content" tabindex="0">
                             <li tabindex="0"><a href="#!">one</a></li>
                             <li tabindex="0"><a href="#!">two</a></li>
@@ -86,50 +80,82 @@
                             <li tabindex="0"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
                             <li tabindex="0"><a href="#!"><i class="material-icons">cloud</i>five</a></li>
                         </ul>
-                        <!-- Dropdown Structure -->
 
                     </div>
                 </div>
+                <ul id="nav" class="row right rightMain" style="margin-right: 10%">
+                        <input type="textbox" id="searchBox" placeholder="Enter Zip"></input>
+                        <a id="searchButton" class="waves-effect waves-light btn">
+                            <i class="material-icons left">search</i>Jam On</a>
+                    </ul>
             </nav>
-        </div>
+        </div> -->
     </header>
 
     <!-- container -->
     <div class="container">
         <!-- ROW 2-->
         <div class="row">
-            <div class="col l6 s12 m12 center">
-                <div class="card blue-grey lighten-3">
-                    <div class="responsive-video card-content white-text">
-                        <iframe width="100%" height="215px" src="https://www.youtube.com/embed/UfQHEpf2q8k" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="col l6 s12 m12">
-                <div class="card blue-grey lighten-3">
-                    <div class="card-content white-text">
-                        <ul text-black>
-                            <li>Band Name:</li>
-                            <li>Date:</li>
-                            <li>Price:</li>
-                            <li>Genre:</li>
-                        </ul>
-                    </div>
-                </div>
+    
+        </div>
+        <br>
+        <div class="row white-text">
+            <div class="col l12 s12 blue-grey lighten-3">
+                <form action="">
+                        <div class="dropOpt input-field col m3 teal z-depth-2">
+                            <select>
+                                <option value="" disabled selected>Dates</option>
+                                <option value="1">Today</option>
+                                <option value="2">Tomorrow</option>
+                                <option value="3">This Weekend</option>
+                                <option value="3">Next Week</option>
+                                <option value="3">Next Month</option>
+                            </select>
+                        </div>
+                        <div class="dropOpt input-field col m3 teal z-depth-2">
+                            <select>
+                                <option value="" disabled selected>Genres</option>
+                                <option value="1">Alternative</option>
+                                <option value="2">Blues</option>
+                                <option value="3">Christian/Gospel</option>
+                                <option value="4">Classical</option>
+                                <option value="5">Country</option>
+                                <option value="6">Folk</option>
+                                <option value="7">Hip Hop</option>
+                                <option value="8">Jazz</option>
+                                <option value="9">Latin</option>
+                                <option value="10">Metal</option>
+                                <option value="11">Pop</option>
+                                <option value="12">Punk</option>
+                                <option value="13">R&B/Soul</option>
+                                <option value="14">Reggae</option>
+                                <option value="15">Rock</option>
+                            </select>
+                        </div>
+                        <div class="dropOpt input-field col m3 teal z-depth-2">
+                            <select>
+                                <option value="" disabled selected>Price Ranges</option>
+                                <option value="1">
+                                </option>
+                                <option value="2">Tomorrow</option>
+                                <option value="3">This Weekend</option>
+                                <option value="3">Next Week</option>
+                                <option value="3">Next Month</option>
+                            </select>
+                        </div>
+                              
+              
+                </form>
+
             </div>
         </div>
         <div class="row blue-grey lighten-3">
             <div class="col l12 s12">
-                <div class="card blue-grey lighten-3">
-                    <div class="row card-title">
+
                         <h4 class="col l6 s12 m12 results white-text align-center">Results:</h1>
-                            <h4 class="col l6 s12 m12 white-text genreResults">Genre:</h1>
                     </div>
-                    <div class="row">
-                        <div class="card-content white-text">
+                    <div class="row tableRow">
+
                             <table class="responsive-table">
                                 <thead>
                                     <tr>
@@ -157,7 +183,7 @@
     </div>
     <!-- CONTAINER WRAPPER -->
 
-
+<div id="randImg"> </div>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -165,6 +191,8 @@
     <!-- materialze js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/seatgeek.js"></script>
+
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
