@@ -56,7 +56,7 @@
           var eventLocalTime = response.events[i].datetime_local;
           // console.log(response.events[0].stats.average_price);
           var eventAveragePrice = response.events[i].stats.average_price;
-          var tableLineData = "<tr><td>" + venueName + "</td><td>" + eventLocalTime + "</td><td>" + eventTitle + "</td><td>" + eventAveragePrice + "</td><td>";
+          var tableLineData = "<tr><td>" + venueName + "</td><td>" + eventLocalTime + "</td><td>" + eventTitle + "</td><td>" + "$" + eventAveragePrice + "</td><td>";
           $("table tbody").append(tableLineData);
         };
 
@@ -72,7 +72,7 @@
   };
 
   // calling our function that spells out our queryURL
-  getConcertByLatLon("44.98", "-94.18", "200mi", "200", "2019-05-17");
+  getConcertByLatLon("44.98", "-94.18", "20mi", "200", "2019-05-17");
 
   // updateMusicTable(tableLineData);
 
