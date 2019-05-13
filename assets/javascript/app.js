@@ -27,7 +27,7 @@ $( document ).ready(function() {
     //handle the search box and button
     $("#searchButton").click(function(){
         term = $("#searchBox").val();
-        console.log("seach term was: "+term);
+        console.log("zip code is: "+term);
         $("#searchBox").val("");
     });
     
