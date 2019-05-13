@@ -1,6 +1,33 @@
 
       // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
-          
+      $(document).ready(function () { 
+      $('select').formSelect();
+
+      $('.dropdown-trigger').dropdown();
+  
+      console.log("yay")
+  
+      //initializes all the dropdowns
+      $('.dropdown-trigger').dropdown();
+      
+      //handle clicks for dates dropdown
+      $("#dropdown1 > li").click(function(){
+          var clicked1 = $(this).text();
+          console.log(clicked1);
+      });
+      //handle clicks for genres dropdown
+      $("#dropdown2 > li").click(function(){
+          var clicked2 = $(this).text();
+          console.log(clicked2);
+      });
+  
+      //handle the search box and button
+      $("#searchButton").click(function(){
+          term = $("#searchBox").val();
+          console.log("seach term was: "+term);
+          $("#searchBox").val("");
+      });
+  
       function getConcertByLatLon(lat, lon, range, ticketPrice, datetime){
 
         var client_id = "MTEyMTc0NzN8MTU1NzM0NDE0OS40OA";
@@ -47,5 +74,5 @@
     getConcertByLatLon("44.98", "-93.18", "200mi", "10", "2019-05-17");
     
     
-      
+  }); //end document ready
      

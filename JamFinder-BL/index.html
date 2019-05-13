@@ -17,82 +17,14 @@
     
 </head>
 
-<body>
+<body class="white-text">
     <header>
         <div class="navbar-fixed">
             <nav>
-                <div class="nav-wrapper blue-grey darken-1">
+                <div class="nav-wrapper teal z-depth-1-half darken-1">
                     <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
                     
                 </div>
-            </nav>
-        </div>
-        <!-- NAV WRAPPER -->
-        <div class="navbar ">
-            <nav class="nav-wrapper valign-wrapper blue-grey lighten-2">
-                <div class="row main-content left leftMain">
-                    <div class="col m4 input-field">
-                        <a class="dropdown-trigger btn dropdownItem" href="#" data-target="dropdown1">
-                            <p>Dates</p>
-                        </a>
-                        <ul id='dropdown1' class='dropdown-content'>
-                                <li><a href="#!">All Dates</a></li>
-                                <li class="divider" tabindex="-1"></li>
-                                <li><a href="#!">Today</a></li>
-                                <li><a href="#!">Tomorrow</a></li>
-                                <li><a href="#!">This Weekend</a></li>
-                                <li><a href="#!">Next Week</a></li>
-                                <li><a href="#!">Next Month</a></li>
-                            </ul>
-                        <!-- Dropdown Structure -->
-                    </div>
-                    <div class="col m4">
-                        <a class=" dropdown-trigger btn dropdownItem" href="#" data-target="dropdown2">
-                            <p>Genres</p>
-                        </a>
-                        <ul id='dropdown2' class='dropdown-content'>
-                                <li><a href="#!">All Genres</a></li>
-                                <li class="divider" tabindex="-1"></li>
-                                <li><a href="#!">Alternative</a></li>
-                                <li><a href="#!">Blues</a></li>
-                                <li><a href="#!">Christian/Gospel</a></li>
-                                <li><a href="#!">Classical</a></li>
-                                <li><a href="#!">Country</a></li>
-                                <li><a href="#!">Electronic</a></li>
-                                <li><a href="#!">Folk</a></li>
-                                <li><a href="#!">Hip Hop</a></li>
-                                <li><a href="#!">Jazz</a></li>
-                                <li><a href="#!">Latin</a></li>
-                                <li><a href="#!">Metal</a></li>
-                                <li><a href="#!">Pop</a></li>
-                                <li><a href="#!">Punk</a></li>
-                                <li><a href="#!">R&B/Soul</a></li>
-                                <li><a href="#!">Reggae</a></li>
-                                <li><a href="#!">Rock</a></li>
-                            </ul>
-                        <!-- Dropdown Structure -->
-                    </div>
-                    <div class="col m4">
-                        <a class="dropdown-trigger btn dropdownItem" href="#" data-target="dropdown3"><p>Drop</p></a>
-                        <ul id="dropdown3" class="dropdown-content" tabindex="0">
-                            <li tabindex="0"><a href="#!">one</a></li>
-                            <li tabindex="0"><a href="#!">two</a></li>
-                            <li class="divider" tabindex="-1"></li>
-                            <li tabindex="0"><a href="#!">three</a></li>
-                            <li tabindex="0"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                            <li tabindex="0"><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                        </ul>
-                        <!-- Dropdown Structure -->
-
-                    </div>
-                </div>
-                <form id="nav" class="row right rightMain" style="margin-right: 10%">  
-                                <input id="txtZip" name="zip" type="text" /><br />
-                                <input id="searchButton" class="waves-effect waves-light btn" type="submit" 
-                                i class="material-icons left"
-                                value="Jam On"
-                                onclick="IsValidZipCode(this.form.zip.value)">
-                                </form>
             </nav>
         </div>
     </header>
@@ -101,38 +33,74 @@
     <div class="container">
         <!-- ROW 2-->
         <div class="row">
-            <div class="col l6 s12 m12 center">
-                <div class="card blue-grey lighten-3">
-                    <div class="responsive-video card-content white-text">
-                        <iframe width="100%" height="215px" src="https://www.youtube.com/embed/UfQHEpf2q8k" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="col l6 s12 m12">
-                <div class="card blue-grey lighten-3">
-                    <div class="card-content white-text">
-                        <ul class="text-black" >
-                            <li>Band Name:</li>
-                            <li>Date:</li>
-                            <li>Price:</li>
-                            <li>Genre:</li>
-                        </ul>
-                    </div>
-                </div>
+    
+        </div>
+        <br>
+        <div class="row white-text">
+            <div class="col l12 s12 blue-grey lighten-3">
+                <form action="">
+                        <div class="dropOpt input-field col m3 teal z-depth-2">
+                            <select>
+                                <option value="" disabled selected>Dates</option>
+                                <option value="1">Today</option>
+                                <option value="2">Tomorrow</option>
+                                <option value="3">This Weekend</option>
+                                <option value="3">Next Week</option>
+                                <option value="3">Next Month</option>
+                            </select>
+                        </div>
+                        <div class="dropOpt input-field col m3 teal z-depth-2">
+                            <select>
+                                <option value="" disabled selected>Genres</option>
+                                <option value="1">Alternative</option>
+                                <option value="2">Blues</option>
+                                <option value="3">Christian/Gospel</option>
+                                <option value="4">Classical</option>
+                                <option value="5">Country</option>
+                                <option value="6">Folk</option>
+                                <option value="7">Hip Hop</option>
+                                <option value="8">Jazz</option>
+                                <option value="9">Latin</option>
+                                <option value="10">Metal</option>
+                                <option value="11">Pop</option>
+                                <option value="12">Punk</option>
+                                <option value="13">R&B/Soul</option>
+                                <option value="14">Reggae</option>
+                                <option value="15">Rock</option>
+                            </select>
+                        </div>
+                        <div class="dropOpt input-field col m3 teal z-depth-2">
+                            <select>
+                                <option value="" disabled selected>Price Ranges</option>
+                                <option value="1">
+                                </option>
+                                <option value="2">Tomorrow</option>
+                                <option value="3">This Weekend</option>
+                                <option value="3">Next Week</option>
+                                <option value="3">Next Month</option>
+                            </select>
+                        </div>
+                              
+              
+                </form>
+
             </div>
         </div>
         <div class="row blue-grey lighten-3">
             <div class="col l12 s12">
-                <div class="card blue-grey lighten-3">
-                    <div class="row card-title">
+
+                    <form id="nav">  
+                            <input id="txtZip" name="zip" type="text" placeholder="Enter Zipcode..." /><br />
+                            <input id="searchButton" class="waves-effect waves-light btn" type="submit" 
+                            i class="material-icons left"
+                            value="Jam On"
+                            onclick="IsValidZipCode(this.form.zip.value)">
+                            </form>
+
                         <h4 class="col l6 s12 m12 results white-text align-center">Results:</h1>
-                            <h4 class="col l6 s12 m12 white-text genreResults">Genre:</h1>
                     </div>
-                    <div class="row">
-                        <div class="card-content white-text">
+                    <div class="row tableRow">
+
                             <table class="responsive-table">
                                 <thead>
                                     <tr>
@@ -160,7 +128,7 @@
     </div>
     <!-- CONTAINER WRAPPER -->
 
-
+<div id="randImg"> </div>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -168,6 +136,8 @@
     <!-- materialze js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/seatgeek.js"></script>
+
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
