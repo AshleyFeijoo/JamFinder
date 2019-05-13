@@ -90,13 +90,14 @@
             <div class="col l12 s12">
 
                     <form id="nav">  
-                            <input id="txtZip" name="zip" type="text" placeholder="Enter Zipcode..." /><br />
-                            <input id="searchButton" class="waves-effect waves-light btn" type="submit" 
+                            <input id="txtZip" name="zip" type="text" placeholder="Enter Zipcode..." >
+                            <br>
+                            <input id="searchButton" class="waves-effect waves-light btn" type="button" 
                             i class="material-icons left"
                             value="Jam On"
-                            onclick="IsValidZipCode(this.form.zip.value)">
+                            onclick="IsValidZipCode(this.form.zip.value);">
+                            <p id="invalid"></p>
                             </form>
-
                         <h4 class="col l6 s12 m12 results white-text align-center">Results:</h1>
                     </div>
                     <div class="row tableRow">

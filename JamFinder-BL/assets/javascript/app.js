@@ -32,12 +32,18 @@ $( document ).ready(function() {
     });
     
 });
+
 // Alert if Zipcode is valid/invalid
 function IsValidZipCode(zip) {
     var isValid = /\d{5}-\d{4}$|^\d{5}$/.test(zip);
     if (isValid)
         console.log('Valid ZipCode');
     else {
-        alert('Invalid ZipCode');
+        document.getElementById("invalid").innerHTML = "Invalid Zipcode";
     }
 }
+
+txtZip.onclick = function() {
+    document.getElementById("invalid").innerHTML = "";
+}
+
