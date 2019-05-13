@@ -49,4 +49,16 @@ body{
 .rightMain {
     margin-left: 0;
     margin-right: 50%;
+<<<<<<< HEAD
+}
+
+.dropOpt{
+    margin-left: 2em!important;
+    border-radius: .5em;
+}
+
+.tableRow{
+    padding:1em;
+=======
+>>>>>>> 8d7786918c44c28fbb2a4ccea1db41d0189b1739
 }

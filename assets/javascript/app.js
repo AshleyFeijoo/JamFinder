@@ -1,5 +1,7 @@
 
 
+<<<<<<< HEAD
+=======
 $(document).ready(function () {
     $('select').formSelect();
 
@@ -32,3 +34,4 @@ $( document ).ready(function() {
     });
     
 });
+>>>>>>> 8d7786918c44c28fbb2a4ccea1db41d0189b1739
