@@ -1,4 +1,17 @@
 
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8H5XDQflXx8KxdohIen146B9gyJIEJvA",
+    authDomain: "jamfinder-ae411.firebaseapp.com",
+    databaseURL: "https://jamfinder-ae411.firebaseio.com",
+    projectId: "jamfinder-ae411",
+    storageBucket: "jamfinder-ae411.appspot.com",
+    messagingSenderId: "933894672452",
+    appId: "1:933894672452:web:d8aab0e980741511"
+  };
+ 
+  firebase.initializeApp(firebaseConfig);
+
 
 $(document).ready(function () {
     $('select').formSelect();
