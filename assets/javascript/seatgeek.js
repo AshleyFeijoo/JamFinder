@@ -37,6 +37,8 @@
         
         if (datetimeStart === datetimeEnd) {
 
+          datetimeEnd = (moment(datetimeStart).add(1, 'd').format('MM-DD-YYYY'));
+
           queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret="
             + client_secret + latString + lonString + rangeString + ticketPriceString
             + datetimeTodayString + "&datetime_local.lt=" + datetimeEnd+ taxonomyString; 
