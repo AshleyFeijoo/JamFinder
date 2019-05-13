@@ -49,6 +49,7 @@ body{
 .rightMain {
     margin-left: 0;
     margin-right: 50%;
+<<<<<<< HEAD
 }
 
 .dropOpt{
@@ -58,4 +59,6 @@ body{
 
 .tableRow{
     padding:1em;
+=======
+>>>>>>> 8d7786918c44c28fbb2a4ccea1db41d0189b1739
 }
