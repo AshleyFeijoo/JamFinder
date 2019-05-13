@@ -12,35 +12,6 @@
 
     <script>
 
-    /*START API SNIPPET - SIMON
-        *
-        *
-        *
-    */
-
-    var API_KEY = "AIzaSyDHcMkWIi06ah4VlEbBCTCiGVSQjD9nH-s";
-    var q = "childish+gambino";
-    var part = "snippet"; //always use snippet?
-    var baseURL = "https://www.googleapis.com/youtube/v3/search";
-
-    var queryURL = baseURL + "?" + "part=" + part + "&q=" + q + "&key=" + API_KEY;
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
-
-
-
-    /*
-    //*    
-    //*
-    //END API SNIPPET - SIMON
-    */
-
-
 
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
@@ -53,15 +24,9 @@
       //    after the API code downloads.
       var player;
       function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
+        playVideoIdFromSearch("the+jayhawks");
+        // getVideoIdFromSearch("childish-gambino");
+        // playVideoIdFromSearch("wakeboarding");
       }
 
       // 4. The API will call this function when the video player is ready.
@@ -82,6 +47,41 @@
       function stopVideo() {
         player.stopVideo();
       }
+
+
+
+      function playVideoIdFromSearch(q) {  
+        var API_KEY = "AIzaSyDHcMkWIi06ah4VlEbBCTCiGVSQjD9nH-s";
+        var q = q;
+        var part = "snippet"; //always use snippet?
+        var type = "video";
+        var baseURL = "https://www.googleapis.com/youtube/v3/search";
+
+        var queryURL = baseURL + "?" + "part=" + part + "&q=" + q + "&type=" + type + "&key=" + API_KEY;
+
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+          console.log(response);
+
+          var videoToPlay = response.items[1].id.videoId;
+          console.log(videoToPlay);
+
+          player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: videoToPlay,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+
+        });
+      };   
+
+
     </script>
   </body>
 </html>
