@@ -9,7 +9,7 @@
     var startDateTerm;
     var endDateTerm;
 
-      // $(document).ready(function () { 
+      $(document).ready(function () { 
       $('select').formSelect();
   
   
@@ -216,5 +216,5 @@
 
 
     
-  // }); //end document ready
+  }); //end document ready
      
