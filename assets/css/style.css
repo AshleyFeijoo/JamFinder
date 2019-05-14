@@ -298,3 +298,9 @@ h4.results.align-center {
     border-top: rgba(139, 139, 139, 0.493) solid 1px;
     border-bottom: rgba(139, 139, 139, 0.493) solid 1px;
 }
+
+.ytbtn{
+    background-image: url('../images/yt_icon_mono_light.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}

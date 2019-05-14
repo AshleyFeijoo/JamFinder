@@ -21,7 +21,6 @@
             <nav>
                 <div class="nav-wrapper teal darken-3 z-depth-1-half darken-1">
                     <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
-                    
                 </div>
             </nav>
         </div>
@@ -43,6 +42,7 @@
         <div class="row white-text flow-text" id ="mainForm">
             <div class="mainDiv z-depth-2 center-align teal lighten-5">
                 <form name="jam" method="post" id="jamForm">
+                    <div>
                         <div class="dropOpt input-field col m4 teal z-depth-2">
                             <select name="dateSelect" id="dateSelect">
                                 <option value="" disabled selected>Dates</option>
@@ -81,15 +81,13 @@
                                 <option value="100">Less than $100</option>
                                 <option value="100000">Any Price</option>
                             </select>
-                        </div>
-                              
-                        <div class="row center-align">
-  
-                            <button class="btn waves-effect waves-light btn-large" type="submit" value="submit" name="jamForm" id="jamBtn">Jam On
-                                <i class="material-icons left">search</i>
-                            </button>
-
-                        </div>
+                        </div>  
+                    </div>
+                    <div class="row center-align">
+                        <button class="btn waves-effect waves-light btn-large" type="submit" value="submit" name="jamForm" id="jamBtn">Jam On
+                            <i class="material-icons left">search</i>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
