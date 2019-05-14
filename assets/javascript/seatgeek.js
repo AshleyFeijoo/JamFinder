@@ -1,80 +1,243 @@
 
-      // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
-      $(document).ready(function () { 
-        M.AutoInit();
+//=========++++++++++========================++++++++++===============//
+  // GLOBAL VARIABLES
+//=========++++++++++========================++++++++++===============//
+window['moment-range'].extendMoment(moment);
 
-      $('select').formSelect();
+var today = moment().format('YYYY-MM-DD');
+var tomorrow = moment().add(1,'days').format("YYYY-MM-DD");
+var nextWeek = moment().add(7,'days').format('YYYY-MM-DD');
+var nextMonth = moment().add(30,'days').format('MM-DD-YYYY');
+var date;
+var latOne;
+var longOne;
+var dateTime=[];
+var venueLoc;
+var selectedDate;
+var selected;
+var dateSel;
+var selectedTwo;
+var genreSel;
+var selectedThree;
+var priceSel;
 
-      $('.dropdown-trigger').dropdown();
-  
-      console.log("yay")
-  
-      //initializes all the dropdowns
-      $('.dropdown-trigger').dropdown();
+
+var startDate = new Date(today);
+var endDate = new Date(nextWeek);
+
+
+  // date array
+var getDateArray = function(start, end) {
+
+  var
+    arr = new Array(),
+    dt = new Date(start);
+
+  while (dt <= end) {
+    arr.push(new Date(dt));
+    dt.setDate(dt.getDate() + 1);
+  }
+
+  return arr;
+
+}
+
+//=========++++++++++========================++++++++++===============//
+  //DOCUMENT LOAD++++
+//=========++++++++++========================++++++++++===============//
+$(document).ready(function () {
+$('#mainForm').hide();
+$('#resultsDiv').hide()
+$('.tableRow').hide();
+$('#spinner').hide()
+getLocation(); //FUNCTION FOR GEOLOCATION
+
+
+//=========++++++++++========================++++++++++===============//
+  //MATERIALIZE INITIALIZERS  
+//=========++++++++++========================++++++++++===============//
+
+M.AutoInit();
+$('.pushpin').pushpin();
+$('select').formSelect();
+$('.dropdown-trigger').dropdown();
+
+//=========++++++++++========================++++++++++===============//
+//GEOLOCATION HTML THAT ASKS USER FOR THEIR GEOLOCATION
+//=========++++++++++========================++++++++++===============//
+
+  function getLocation() {
+    
+    if (navigator.geolocation) {
+      $('#spinner').show();
+      //IF USER GRANTS THE LOCATION IT RUNS THE FUNCTION 'show position'
+      navigator.geolocation.getCurrentPosition(showPosition);
       
-      //handle clicks for dates dropdown
-      $("#dropdown1 > li").click(function(){
-          var clicked1 = $(this).text();
-          console.log(clicked1);
-      });
-      //handle clicks for genres dropdown
-      $("#dropdown2 > li").click(function(){
-          var clicked2 = $(this).text();
-          console.log(clicked2);
-      });
-  
-      //handle the search box and button
-      $("#searchButton").click(function(){
-          term = $("#searchBox").val();
-          console.log("seach term was: "+term);
-          $("#searchBox").val("");
-      });
-  
-      function getConcertByLatLon(lat, lon, range, ticketPrice, datetime){
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
 
-        var client_id = "MTEyMTc0NzN8MTU1NzM0NDE0OS40OA";
-        var client_secret = "d6005bfa21771638a4b460529bda0a83178316ba8c20d7ed24f0a383973f6246";
-        // var listingCount = "10";
-        var baseURL = "https://api.seatgeek.com/2/"; 
-        var endpoint = "events";
+//=========++++++++++========================++++++++++===============//
+//FUNCTION THAT SHOWS THE LONG AND LAT OF USER'S POSITION
+//=========++++++++++========================++++++++++===============//
 
-        var lat = lat;
-        var latString = "&lat=" + lat
+function showPosition(position) {
+  $('.locSpinner').hide();
+  $('.begin').hide();
+  $('#mainForm').show();
 
-        var lon = lon;
-        var lonString = "&lon=" + lon
 
-        var range = range;
-        var rangeString = "&range.lte=" + range
+  var tempLong = position.coords.longitude;
+  var tempLat= position.coords.latitude;
+  longOne = tempLong.toFixed(2);
+  latOne = tempLat.toFixed(2);
+  console.log('your longitude is ' + longOne);
+  console.log('your latitude is ' + latOne);
 
-        var ticketPrice = ticketPrice;
-        var ticketPriceString = "&lowest_price.lte=" + ticketPrice; 
+}
 
-        var datetime = datetime;
-        var datetimeString = "&datetime_local.lte=" + datetime;
 
-        var taxonomy = "concert";
-        var taxonomyString = "&taxonomies.name=" + taxonomy;
+$('#jamBtn').click(function(event) {
+  event.preventDefault()
 
-        var queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret=" + client_secret + latString + lonString + rangeString + ticketPriceString + datetimeString + taxonomyString; 
+  // GETTING THE DATES & GENRES AND PRICE //
+   selected = $('.datesDiv option:selected');
+   dateSel = selected[0].label;
+   selectedTwo = $('.genreDiv option:selected');
+   genreSel = selectedTwo[0].label;
+   selectedThree = $('.priceDiv option:selected');
+   priceSel = selectedThree[0].label;
 
-        
+  console.log('The date you chose is: '  + dateSel);
+  console.log('The Genre you chose is: '  + genreSel);
+  console.log('The Price you chose is: '  + priceSel);
+  if (dateSel !== undefined && genreSel !== undefined && priceSel !== undefined){
+    console.log('you filled out some shit, good work!')
+    $('#resultsDiv').show()
+    $('.tableRow').show();
 
-        console.log(queryURL);
+  }
+  if (dateSel === 'Today'){
+    datetime = today;
+    console.log(datetime)
 
-        // $.ajax({
-        //   url: queryURL,
-        //   method: "GET"
-        // }).then(function(response) {
-        //     console.log(response);
-        //     for (i=0; i < 21; i++)
-        //     console.log(response.genres[i].name);
-        // });
+  }else if(dateSel === 'Tomorrow'){
+    datetime = moment().add(1,'days').format('MM-DD-YYYY');
+    console.log(datetime);
+  }else if(dataSel === 'Next Week'){
+    datetime = moment().add(7,'days').format('MM-DD-YYYY');
+    console.log(date)
+  }
 
+
+    var client_id = "MTEyMTc0NzN8MTU1NzM0NDE0OS40OA";
+    var client_secret = "d6005bfa21771638a4b460529bda0a83178316ba8c20d7ed24f0a383973f6246";
+    // var listingCount = "10";
+    var baseURL = "https://api.seatgeek.com/2/"; 
+    var endpoint = "events";
+
+    var lat = latOne;
+    var latString = "&lat=" + lat
+
+    var lon = longOne;
+    var lonString = "&lon=" + lon
+
+
+    var ticketPrice = '100';
+    var ticketPriceString = "&lowest_price.lte=" + ticketPrice; 
+
+
+    // var datetime = datetime;
+    var datetimeString = "&datetime_local.lte=" + datetime;
+
+    var taxonomy = "concert";
+    var taxonomyString = "&taxonomies.name=" + taxonomy;
+
+    var queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret=" + client_secret + latString + lonString + ticketPriceString + datetimeString + taxonomyString; 
+
+    console.log('the dateTime is ' + dateTime);
+
+    console.log(queryURL);
+
+  //=========++++++++++========================++++++++++===============//
+    // AJAX CALL //
+  //=========++++++++++========================++++++++++===============//
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      var responseNew = response.events;
+      console.log(responseNew);
+      if (responseNew.length == 0){
+        swal('NO RESULTS!');
+      
       }
+        for (let i=0; i < responseNew.length; i++){
+          console.log(responseNew[i]);
+          console.log(genreSel);
+          var genreGen = responseNew[i].performers[0].genres[0].name;
+          console.log(genreGen);
+          var title = response.events[i].title;
+          console.log('the title is: ' + response.events[i].title);
+          dateTime1 = response.events[i].datetime_local;
+          var venueName = responseNew[i].venue.name;
 
-    getConcertByLatLon("44.98", "-93.18", "200mi", "10", "2019-05-17");
-    
-    
-  }); //end document ready
+          var price = responseNew[i].stats.median_price;
+          console.log('the price is: ' + price);
+
+          venueLoc = response.events[i].venue.city + ', ' + response.events[i].venue.country;
+          console.log('the venue is: ' + venueLoc)
+          if (venueLoc !== ''){
+          }
+          var fields = dateTime1.split("T");
+          date = fields[0];
+          date = moment(date).format("MM-DD-YYYY");
+          time = fields[1];
+          console.log(time);
+          timez = moment(time, 'H:mm:ss').format('hh:mm a')
+          console.log('the date of this show is: ' + date);
+          console.log('the time of this show is: ' + time);
+
+          if (genreGen == genreSel){
+            $('#responseTable').append('<thead>' +
+            '<tr>'+
+            '<th>' + venueLoc + '</th>'+ '<th>' + venueName + '</th>' + '<th>' + date + '</th>' + '<th>' + timez + '</th>'
+            + '<th>' + title + '</th>' + '<th> $'+ price + '</th>'+
+            '</tr>'+ 
+            '</thead>'
+            )
+            console.log('same!')
+          }else {
+            swal('SORRY NO RESULTS!');
+          
+          }
+ 
+
+       
+        }
+
+
+    });
+
+
+
+//end showLocation
+
+  // getConcertByLatLon(latOne, longOne, "200mi", "20", "2019-05-17");
+
+
+});
+
+//=========++++++++++========================++++++++++===============//
+  // FUNCTION FOR GETTING THE EVENT INFORMATION
+//=========++++++++++========================++++++++++===============//
+
+
+
+
+  
+}); //end document ready
+
+
      

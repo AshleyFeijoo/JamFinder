@@ -1,137 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>JamFinder</title>
+             <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/4.0.2/moment-range.js"></script>
+  
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+
         <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
-    
-    
 </head>
-
 <body class="white-text">
     <header>
         <div class="navbar-fixed">
             <nav>
-                <div class="nav-wrapper teal z-depth-1-half darken-1">
-                    <a href="#" class="brand-logo left" style="margin-left:10%">JamFinder</a>
-                    
+                <div class="nav-wrapper teal lighten-3 z-depth-2 darken-1">
+                    <a href="#" class="brand-logo left" style="margin-left:10%"><a href="https://fontmeme.com/cool-fonts/"><img src="https://fontmeme.com/permalink/190514/88f415aacde2271daece47e63fd798b0.png" alt="cool-fonts" border="0"></a></a>
                 </div>
             </nav>
         </div>
-    </header>
+    </header> 
 
     <!-- container -->
     <div class="container">
+    <div class="begin">
+        <h1 class="allowPls black-text">PLEASE ALLOW YOUR LOCATION</h1>
+        <div id="spinner">
+            <div id="fountainTextG" class="locSpinner center-align"><div id="fountainTextG_1" class="fountainTextG">L</div><div id="fountainTextG_2" class="fountainTextG">o</div><div id="fountainTextG_3" class="fountainTextG">a</div><div id="fountainTextG_4" class="fountainTextG">d</div><div id="fountainTextG_5" class="fountainTextG">i</div><div id="fountainTextG_6" class="fountainTextG">n</div><div id="fountainTextG_7" class="fountainTextG">g</div></div>
+        </div>
+    </div>
         <!-- ROW 2-->
-        <div class="row">
-    
-        </div>
-        <br>
-        <div class="row white-text">
-            <div class="col l12 s12 blue-grey lighten-3">
-                <form action="">
-                        <div class="dropOpt input-field col m3 teal z-depth-2">
-                            <select>
-                                <option value="" disabled selected>Dates</option>
-                                <option value="1">Today</option>
-                                <option value="2">Tomorrow</option>
-                                <option value="3">This Weekend</option>
-                                <option value="3">Next Week</option>
-                                <option value="3">Next Month</option>
-                            </select>
-                        </div>
-                        <div class="dropOpt input-field col m3 teal z-depth-2">
-                            <select>
-                                <option value="" disabled selected>Genres</option>
-                                <option value="1">Alternative</option>
-                                <option value="2">Blues</option>
-                                <option value="3">Christian/Gospel</option>
-                                <option value="4">Classical</option>
-                                <option value="5">Country</option>
-                                <option value="6">Folk</option>
-                                <option value="7">Hip Hop</option>
-                                <option value="8">Jazz</option>
-                                <option value="9">Latin</option>
-                                <option value="10">Metal</option>
-                                <option value="11">Pop</option>
-                                <option value="12">Punk</option>
-                                <option value="13">R&B/Soul</option>
-                                <option value="14">Reggae</option>
-                                <option value="15">Rock</option>
-                            </select>
-                        </div>
-                        <div class="dropOpt input-field col m3 teal z-depth-2">
-                            <select>
-                                <option value="" disabled selected>Price Ranges</option>
-                                <option value="1">$0 - $10 </option>
-                                <option value="2">$11 - $20</option>
-                                <option value="3">$21 - $30</option>
-                                <option value="3">$31 - $40</option>
-                                <option value="3">$41 - $50</option>
-                                <option value="3">$51 - $60</option>
-                                <option value="3">$61 - $70</option>
-                                <option value="3">$71 - $80</option>
-                                <option value="3">$81 - $90</option>
-                                <option value="3">$91 - $100</option>
-                                <option value="3">$100+</option>
-                            </select>
-                        </div>
-                        <div class="row">
-                            <div class="col l12">
-                            <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Jam On
-                                <i class="material-icons left">search</i>
-                            </button>
-                            </div>
-                        </div>
-                </form>
-
-            </div>
-        </div>
-        <div class="row blue-grey lighten-3">
-            <div class="col l12 s12">
-
-                        <h4 class="col l6 s12 m12 results white-text align-center">Results:</h1>
+        <div class="row white-text dropOpt" id ="mainForm">
+                <form action=""  class="col l12" name="dropForm">
+                    <div class="dropOpt input-field col m4 teal dark-4 z-depth-2">
+                        <select class="datesDiv">
+                            <option value="" disabled selected>Dates</option>
+                            <option value="1">Today</option>
+                            <option value="2">Tomorrow</option>
+                            <option value="3">This Weekend</option>
+                            <option value="3">Next Week</option>
+                            <option value="3">Next Month</option>
+                        </select>
                     </div>
-                    <div class="row tableRow">
-
-                            <table class="responsive-table">
-                                <thead>
-                                    <tr>
-                                        <th id="location">Location</th>
-                                        <th id="date">Date</th>
-                                        <th id="bandName">Band/Artist Name</th>
-                                        <th id="price">Item Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th id="location">Orlando, FL</th>
-                                        <th id="date">09:10:00 5:00PM</th>
-                                        <th id="bandName">John Travolta</th>
-                                        <th id="price">$69.87</th>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="dropOpt input-field col m4 teal dark-4 z-depth-2">
+                        <select class="genreDiv">
+                            <option value="" disabled selected>Genres</option>
+                            <option value="1">Alternative</option>
+                            <option value="2">Blues</option>
+                            <option value="3">Christian</option>
+                            <option value="3">Gospel</option>
+                            <option value="4">Classical</option>
+                            <option value="5">Country</option>
+                            <option value="6">Folk</option>
+                            <option value="7">Hip Hop</option>
+                            <option value="8">Jazz</option>
+                            <option value="9">Latin</option>
+                            <option value="10">Metal</option>
+                            <option value="11">Pop</option>
+                            <option value="12">Punk</option>
+                            <option value="13">Soul</option>
+                            <option value="13">Rnb</option>
+                            <option value="14">Reggae</option>
+                            <option value="15">Rock</option>
+                        </select>
                     </div>
+                    <div class="dropOpt input-field col m4 teal dark-4 z-depth-2">
+                        <select class="priceDiv">
+                            <option value="" disabled selected>Price Ranges</option>
+                            <option value="1">$0 - $10 </option>
+                            <option value="2">$11 - $20</option>
+                            <option value="3">$21 - $30</option>
+                            <option value="3">$31 - $40</option>
+                            <option value="3">$41 - $50</option>
+                            <option value="3">$51 - $60</option>
+                            <option value="3">$61 - $70</option>
+                            <option value="3">$71 - $80</option>
+                            <option value="3">$81 - $90</option>
+                            <option value="3">$91 - $100</option>
+                            <option value="3">$100+</option>
+                        </select>
+                    </div>
+                <div class="col l12 jamBtnCol">
+                    <button class="btn waves-effect waves-light btn-large" type="submit" id ="jamBtn">Jam On
+                        <i class="material-icons left">search</i>
+                    </button>
                 </div>
-            </div>
+                </form>
+                <!-- <div class="row center-block">
+                      
+                    </div> -->
         </div>
+        <div class="row teal lighten-3">
+            <!-- <div class="row">
+                <form class="col s12" name="jamOn">
+                    <div class="row zipRow">
+                        <div class="col s2"></div>
+                        <div class="input-field col s4">
+                            <input id="txtZip" name="zip" type="text" placeholder="Enter Zipcode..." >
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="searchButton" class="btn-large waves-effect waves-light btn" type="submit" 
+                            i class="material-icons left"
+                            value="Jam On"
+                            onclick="IsValidZipCode(this.form.zip.value)">
+                        </div>
+                    </div>
+                </form>
+            </div> -->
 
+            <div class="row" id="resultsDiv">
+                <h4 class="col l6 s12 m12 results white-text align-center">Results:</h1>
+            </div>
+                <div class="row tableRow">
+                        <table class="responsive-table" id="responseTable">
+                            <thead>
+                                <tr>
+                                    <th id="location">Location</th>
+                                    <th id="venue">Venue</th>
+                                    <th id="date">Date</th>
+                                    <th id="Time">Time</th>
+                                    <th id="bandName">Band/Artist Name</th>
+                                    <th id="price">Item Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                   
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+             </div>
+        </div>
     </div>
     <!-- CONTAINER WRAPPER -->
-
-<div id="randImg"> </div>
-
+  
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -140,6 +152,7 @@
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/seatgeek.js"></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
