@@ -1,6 +1,15 @@
 
       // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
-      $(document).ready(function () { 
+
+      var latStart;
+    var lonStart;
+    var numPages = 1;
+    var genreTerm;
+    var priceTerm;
+    var startDateTerm;
+    var endDateTerm;
+
+      // $(document).ready(function () { 
       $('select').formSelect();
   
   
@@ -12,10 +21,25 @@
     //     console.log($('form').serialize());
     // });
 
+
+    navigator.geolocation.getCurrentPosition(function(location) {
+      latStart = (location.coords.latitude);
+      lonStart = (location.coords.longitude);
+      console.log(lonStart);
+      console.log(latStart);
+      // getConcertByLatLon(latStart, lonStart, "50mi", "200", "2019-05-25");
+    });
+    
+    
+    function paginationNextFunction() {
+      numPages++
+      console.log(numPages);
+      // getConcertByLatLon(latStart, lonStart, "50mi", "200", "2019-05-25");
+    
+    }
+
     
     $('form').submit(function(evt) {
-      var startDateTerm;
-      var endDateTerm;
       evt.preventDefault();
       formData= new FormData(evt.target);
       console.log(formData.get('dateSelect'));
@@ -54,7 +78,11 @@
       }
       genreTerm = formData.get('genreSelect');
       priceTerm = formData.get('priceSelect');
+<<<<<<< HEAD
       getConcertByLatLon("44.98", "-93.18", "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);
+=======
+      getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);
+>>>>>>> 51fd5adb571e4c3d579102cbd1317cd4ff6b07d7
     });
     
 
@@ -151,11 +179,46 @@
           method: "GET"
         }).then(function(response) {
             console.log(response);
+            console.log(response);
+            for (i = 0; i < response.events.length; i++){
+              var genreGen = response.events[i].performers[0].genres[0].name;
+              console.log('the genre of the event is: ' + genreGen);
+              // console.log(response.events[0].title);
+              var eventTitle = response.events[i].title;
+              // console.log(response.events[0].venue.name);
+              var venueName = response.events[i].venue.name;
+              // console.log(response.events[0].datetime_local);
+              var eventLocalTime = response.events[i].datetime_local;
 
+
+              var fields = eventLocalTime.split("T");
+              date = fields[0];
+              date = moment(date).format("MM-DD-YYYY");
+              time = fields[1];
+              console.log(time);
+              timez = moment(time, 'H:mm:ss').format('hh:mm a')
+              console.log('the date of this show is: ' + date);
+              console.log('the time of this show is: ' + timez);
+    
+
+              // console.log(response.events[0].stats.average_price);
+              var eventAveragePrice = response.events[i].stats.median_price;
+              var eventUrl = response.events[i].venue.url;
+              // if statement to replace null
+              if (eventAveragePrice === null){
+                eventAveragePrice = "Price Un-Listed";
+              } else {
+                eventAveragePrice = "$" + response.events[i].stats.average_price;
+              }
+              var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName + "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td>" + eventTitle + "</td><td>" + eventAveragePrice + "</td><td>";
+              $("table tbody").append(tableLineData);
+              
+            };
         });
 
       }
 
+
     
-  }); //end document ready
+  // }); //end document ready
      

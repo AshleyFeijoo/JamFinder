@@ -31,12 +31,11 @@
 
     <!-- container -->
     <div class="container">
-        <!-- ROW 2-->
-        <div class="row">
-    
-        </div>
+        <!-- ADDED LOADING SPINNER -->
+
+        <!-- ================ -->
         <br>
-        <div class="row white-text">
+        <div class="row white-text" id ="mainForm">
             <div class="col l12 s12 blue-grey lighten-3">
                 <form name="jam" method="post" id="jamForm">
                         <div class="dropOpt input-field col m3 teal z-depth-2">
@@ -92,9 +91,8 @@
 
             </div>
         </div>
-        <div class="row blue-grey lighten-3">
+        <div class="row blue-grey lighten-3" id="resultsDiv">
             <div class="col l12 s12">
-
                         <h4 class="col l6 s12 m12 results white-text align-center">Results:</h1>
                     </div>
                     <div class="row tableRow">
@@ -102,18 +100,16 @@
                             <table class="responsive-table">
                                 <thead>
                                     <tr>
-                                        <th id="location">Location</th>
-                                        <th id="date">Date</th>
-                                        <th id="bandName">Band/Artist Name</th>
-                                        <th id="price">Item Price</th>
+                                            <th id="location">Location</th>
+                        
+                                    <th id="date">Date</th>
+                                    <th id="Time">Time</th>
+                                    <th id="bandName">Band/Artist Name</th>
+                                    <th id="price">Item Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th id="location">Orlando, FL</th>
-                                        <th id="date">09:10:00 5:00PM</th>
-                                        <th id="bandName">John Travolta</th>
-                                        <th id="price">$69.87</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -132,6 +128,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- alert system -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- materialze js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
