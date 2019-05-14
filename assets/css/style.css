@@ -1,6 +1,23 @@
+
 body {
     margin: 0 auto !important;
 }
+    .flexy {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-evenly;
+        align-items: center;
+        padding-left: 1px;
+    }
+    
+    /* .row.main-content {
+        margin: 0 auto;
+    } */
+    nav.nav-wrapper.valign-wrapper.blue-grey.lighten-2 {
+        z-index: 10000;
+        padding-top:1em;
+    }
 
 
 
@@ -207,6 +224,7 @@ input#searchBox {
 .rightMain {
     margin-left: 0;
     margin-right: 50%;
+
 }
 
 .dropOpt {
