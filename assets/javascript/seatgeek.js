@@ -171,7 +171,7 @@ $(document).ready(function () {
         }
         else {
           var datetimeStart = moment().format('MM-DD-YYYY');
-          var datetimeEnd = moment().add(1, 'd').format('MM-DD-YYYY');
+          var datetimeEnd = moment().add(2, 'M').format('MM-DD-YYYY');
         }
         var datetimeStartString = "&datetime_local.gte=" + datetimeStart;
         var datetimeEndString = "&datetime_local.lte=" + datetimeEnd;                
