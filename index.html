@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>JamFinder</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     
         <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,7 +26,6 @@
             </nav>
         </div>
     </header>
-
 
     <!-- container -->
     <div class="container">
@@ -94,12 +94,8 @@
             </div>
         </div>
 
-        <div class="row video-container" id="youtubeDiv">
-            <div class="col l12" id="player">
+        <div id="player"></div>
 
-            </div>
-
-        </div>
         <div class="mainDiv z-depth-2 row teal lighten-5 teal-text text-darken-3" id="resultsDiv">
             <div class="">
                 <h4 class="results align-center">Results:</h1>
@@ -113,6 +109,7 @@
                         <th class="tbhead" id="Time">Time</th>
                         <th  class="tbhead" id="bandName">Band/Artist Name</th>
                         <th class="tbhead" id="price">Item Price</th>
+                        <th class="tbhead" id="YouTube">Youtube Vid</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -121,8 +118,9 @@
                     </tbody>
                 </table>
             </div>  
+            
             <div class="row center-align">
-                <button class="btn btn-large" onclick="paginationNextFunction()">Add Results</button>
+                <button class="btn btn-large" onclick="paginationNextFunction()"><a href="#mainDiv"></a>Try Again!</button>
             </div>
         </div>
     </div>

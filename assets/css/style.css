@@ -5,6 +5,8 @@ body {
     background-image: url('../images/gplaypattern.png');
     background-repeat: repeat;
     line-height:1.2;
+    font-family: 'Josefin Sans', sans-serif;
+
 }
     .flexy {
         display: flex;
