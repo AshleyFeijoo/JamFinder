@@ -177,17 +177,30 @@ $(document).ready(function () {
           + datetimeStartString + datetimeEndString + taxonomyString + genreString; 
         }
 
+        console.log ("price string:" + ticketPriceString);
+        console.log ('datetimeStartString: '+datetimeStartString);
+        console.log ('datetimeEndString: ' + datetimeEndString);
+        console.log ('genreString: ' + genreString);
         
+
         console.log(queryURL);
 
         $.ajax({
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-            console.log(response);
+            // console.log(response);
+            console.log("There are " + response.events.length + "results.")
+            console.log(response.events);
             for (i = 0; i < response.events.length; i++){
+              if (response.events[i].performers[0].genres){
               var genreGen = response.events[i].performers[0].genres[0].name;
               console.log('the genre of the event is: ' + genreGen);
+              }
+              else {
+                var genreGen = "N/A"
+                console.log("Genre for this result not found");
+              }
               // console.log(response.events[0].title);
               var eventTitle = response.events[i].title;
               // console.log(response.events[0].venue.name);
