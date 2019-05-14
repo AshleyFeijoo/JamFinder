@@ -8,6 +8,7 @@
     var priceTerm;
     var startDateTerm;
     var endDateTerm;
+    
 
 
 
@@ -49,6 +50,7 @@
     }
 $(document).ready(function () { 
       getLocation();
+      $('.tap-target').tapTarget();
       $('select').formSelect();
       $('#youtubeDiv').hide();
       $('#mainForm').hide();
