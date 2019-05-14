@@ -1,18 +1,16 @@
 
       // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
 
-      var latStart;
+    var latStart;
     var lonStart;
     var numPages = 1;
     var genreTerm;
     var priceTerm;
     var startDateTerm;
     var endDateTerm;
+    
 
-      $(document).ready(function () { 
-      $('select').formSelect();
-  
-  
+
 
       // $('form').submit(function(evt) {
       //   evt.preventDefault();
@@ -20,31 +18,52 @@
     //     var data = $('#jamForm') + '<br/>';
     //     console.log($('form').serialize());
     // });
+function getLocation() {
+  if (navigator.geolocation) {
+    $('#spinner').show();
+    //IF USER GRANTS THE LOCATION IT RUNS THE FUNCTION 'show position'
+    navigator.geolocation.getCurrentPosition(showPosition);
+    
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
 
-    navigator.geolocation.getCurrentPosition(function(location) {
+    function showPosition(location) {
+      $('.locSpinner').hide();
+      $('.begin').hide();
+      $('#mainForm').show();
       latStart = (location.coords.latitude);
       lonStart = (location.coords.longitude);
       console.log(lonStart);
       console.log(latStart);
-      // getConcertByLatLon(latStart, lonStart, "50mi", "200", "2019-05-25");
-    });
-    
-    
+    }
+
     function paginationNextFunction() {
       numPages++
       console.log(numPages);
       // getConcertByLatLon(latStart, lonStart, "50mi", "200", "2019-05-25");
     
     }
-
+$(document).ready(function () { 
+      getLocation();
+      $('select').formSelect();
+      $('#mainForm').hide();
+      $('#resultsDiv').hide()
+      $('.tableRow').hide();
+      $('#spinner').show()
     
     $('form').submit(function(evt) {
+      $('#resultsDiv').show();
+      $('.tableRow').show();
       evt.preventDefault();
       formData= new FormData(evt.target);
+      console.log(formData);
       console.log(formData.get('dateSelect'));
       console.log(formData.get('genreSelect'));
       console.log(formData.get('priceSelect'));
+    
       //Dates parsed here 
       switch (formData.get('dateSelect')){
         case "Today":
