@@ -1,5 +1,4 @@
-
-      // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
 
     var latStart;
     var lonStart;
@@ -8,20 +7,17 @@
     var priceTerm;
     var startDateTerm;
     var endDateTerm;
+    
 
 
 
-    var ytVideo = $("<iframe/>");
-    ytVideo.attr({
-      width: 100 + '%',
-      height: 100 + '%',
-      src: 'https://www.youtube.com/embed/E6RGMRamAFk',
-      frameborder: 0
-    });
-    var ytvidNew = $("#player").append(ytVideo);  
-    $('#youtubeDiv').append(ytvidNew);
-
-  function getLocation() {
+      // $('form').submit(function(evt) {
+      //   evt.preventDefault();
+      //   // var data = $("#jamForm :input").serializeArray();
+    //     var data = $('#jamForm') + '<br/>';
+    //     console.log($('form').serialize());
+    // });
+function getLocation() {
   if (navigator.geolocation) {
     $('#spinner').show();
     //IF USER GRANTS THE LOCATION IT RUNS THE FUNCTION 'show position'
@@ -30,7 +26,9 @@
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
-  }
+}
+
+
     function showPosition(location) {
       $('.locSpinner').hide();
       $('.begin').hide();
@@ -43,21 +41,19 @@
 
     function paginationNextFunction() {
       numPages++
-      console.log(range);
       console.log(numPages);
-      getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);    
+      // getConcertByLatLon(latStart, lonStart, "50mi", "200", "2019-05-25");
+    
     }
 $(document).ready(function () { 
       getLocation();
       $('select').formSelect();
-      $('#youtubeDiv').hide();
       $('#mainForm').hide();
       $('#resultsDiv').hide()
       $('.tableRow').hide();
       $('#spinner').show()
     
     $('form').submit(function(evt) {
-      $('#youtubeDiv').show();
       $('#resultsDiv').show();
       $('.tableRow').show();
       evt.preventDefault();
@@ -110,7 +106,7 @@ $(document).ready(function () {
       thisSunday = moment().day(7).format('MM-DD-YYYY');
       return {"Friday": thisFriday, "Sunday": thisSunday};
     }
-  
+
       function getConcertByLatLon(lat, lon, range, ticketPrice, datetimeStart, datetimeEnd, genre){
         $("table tbody").empty();
         var client_id = "MTEyMTc0NzN8MTU1NzM0NDE0OS40OA";
@@ -176,13 +172,13 @@ $(document).ready(function () {
         }
 
         
+
         console.log(queryURL);
 
         $.ajax({
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-            console.log(response);
             console.log(response);
             for (i = 0; i < response.events.length; i++){
               var genreGen = response.events[i].performers[0].genres[0].name;
@@ -193,7 +189,6 @@ $(document).ready(function () {
               var venueName = response.events[i].venue.name;
               // console.log(response.events[0].datetime_local);
               var eventLocalTime = response.events[i].datetime_local;
-
 
               var fields = eventLocalTime.split("T");
               date = fields[0];
@@ -222,8 +217,6 @@ $(document).ready(function () {
 
       }
 
-// POPUP CORNER JS
-// Or with jQuery
+
     
   }); //end document ready
-     

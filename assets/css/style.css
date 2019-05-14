@@ -1,12 +1,34 @@
 body {
     margin: 0 auto !important;
+    background-color: #ffffff;
+    background-image: url('../images/gplaypattern.png');
+    background-repeat: repeat;
+    line-height:1.2;
 }
-
-
 
 #fountainTextG{
 	width:870px;
 	margin:auto;
+}
+
+a{
+    color: rgb(67, 139, 139);
+    text-decoration: underline;
+}
+a:hover,
+a:active{
+    color: rgb(67, 139, 139);
+    font-size: 1.2em;
+
+}
+
+.tbhead{
+    font-size: 1.5em;
+    text-decoration: underline
+}
+
+.mainDiv{
+    border-radius:10px;
 }
 
 .fountainTextG{
@@ -184,6 +206,10 @@ nav.nav-wrapper.valign-wrapper.blue-grey.lighten-2 {
     margin-bottom: 0;
 }
 
+form{
+    padding:2em;
+}
+
 
 input#searchBox {
     height: 2.5em;
@@ -210,10 +236,45 @@ input#searchBox {
 }
 
 .dropOpt {
-    margin-left: 2em !important;
+    /* margin-left: 2em !important; */
     border-radius: .5em;
 }
 
 .tableRow {
     padding: 1em;
+}
+
+.begin,
+#spinner{
+    margin: 0 auto!important;
+    text-align: center!important;
+}
+
+table.highlight tbody tr:hover {
+    background-color: #eee !important;
+}
+
+#resultsDiv{
+    padding:2em;
+}
+
+table.highlight tbody tr:hover {
+  
+        background:
+          -webkit-linear-gradient(294deg, rgb(142, 206, 203) 0%, hsla(177.1, 33.33%, 41.81%, 0) 65%),
+          -webkit-linear-gradient(135deg, hsla(173.21, 100%, 93.23%, 1) 15%, hsla(173.21, 100%, 93.23%, 0) 80%);
+        background:
+          linear-gradient(156deg, rgb(142, 206, 203)(177.1, 33.33%, 41.81%, 1) 0%, hsla(177.1, 33.33%, 41.81%, 0) 65%),
+          linear-gradient(315deg, hsla(173.21, 100%, 93.23%, 1) 15%, hsla(173.21, 100%, 93.23%, 0) 80%);
+        
+
+}
+
+h4.results.align-center {
+    background-color: rgba(238, 238, 238, 0.753);
+    border-radius: 2px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-top: rgba(139, 139, 139, 0.493) solid 1px;
+    border-bottom: rgba(139, 139, 139, 0.493) solid 1px;
 }
