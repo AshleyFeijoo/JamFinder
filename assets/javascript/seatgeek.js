@@ -11,15 +11,15 @@
 
 
 
-    var ytVideo = $("<iframe/>");
-    ytVideo.attr({
-      width: 100 + '%',
-      height: 100 + '%',
-      src: 'https://www.youtube.com/embed/E6RGMRamAFk',
-      frameborder: 0
-    });
-    var ytvidNew = $("#player").append(ytVideo);  
-    $('#youtubeDiv').append(ytvidNew);
+    // var ytVideo = $("<iframe/>");
+    // ytVideo.attr({
+    //   width: 50 + '%',
+    //   height: 50 + '%',
+    //   src: 'https://www.youtube.com/embed/E6RGMRamAFk',
+    //   frameborder: 0
+    // });
+    // var ytvidNew = $("#player").append(ytVideo);  
+    // $('#youtubeDiv').append(ytvidNew);
 
   function getLocation() {
   if (navigator.geolocation) {
@@ -142,7 +142,6 @@ $(document).ready(function () {
         if (datetimeStart){
           var datetimeStart = datetimeStart;  
           var datetimeEnd = datetimeEnd;
-          
         }
         else {
           var datetimeStart = moment().format('MM-DD-YYYY');
@@ -195,7 +194,6 @@ $(document).ready(function () {
               // console.log(response.events[0].datetime_local);
               var eventLocalTime = response.events[i].datetime_local;
 
-
               var fields = eventLocalTime.split("T");
               date = fields[0];
               date = moment(date).format("MM-DD-YYYY");
@@ -205,7 +203,6 @@ $(document).ready(function () {
               console.log('the date of this show is: ' + date);
               console.log('the time of this show is: ' + timez);
     
-
               // console.log(response.events[0].stats.average_price);
               var eventAveragePrice = response.events[i].stats.median_price;
               var eventUrl = response.events[i].venue.url;
@@ -215,9 +212,8 @@ $(document).ready(function () {
               } else {
                 eventAveragePrice = "$" + response.events[i].stats.average_price;
               }
-              var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName + "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td>" + eventTitle + "</td><td>" + eventAveragePrice + "</td><td>";
+              var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName + "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td id='artistsName'>" + eventTitle + "</td><td>" + eventAveragePrice  + '<td><button class="btn btn-small"></button></td>';
               $("table tbody").append(tableLineData);
-              
             };
         });
 
