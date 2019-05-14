@@ -136,7 +136,7 @@ $(document).ready(function () {
       //   });
   
       function getConcertByLatLon(lat, lon, range, ticketPrice, datetimeStart, datetimeEnd, genre){
-
+        $("table tbody").empty();
         var client_id = "MTEyMTc0NzN8MTU1NzM0NDE0OS40OA";
         var client_secret = "d6005bfa21771638a4b460529bda0a83178316ba8c20d7ed24f0a383973f6246";
         // var listingCount = "10";
