@@ -78,11 +78,7 @@
       }
       genreTerm = formData.get('genreSelect');
       priceTerm = formData.get('priceSelect');
-<<<<<<< HEAD
-      getConcertByLatLon("44.98", "-93.18", "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);
-=======
       getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);
->>>>>>> 51fd5adb571e4c3d579102cbd1317cd4ff6b07d7
     });
     
 
@@ -137,23 +133,39 @@
         var range = range;
         var rangeString = "&range.lte=" + range
 
-        var ticketPrice = ticketPrice;
+        if (ticketPrice){
+          var ticketPrice = ticketPrice;
+        }
+        else{
+          var ticketPrice = 100000;
+        }
+
         var ticketPriceString = "&lowest_price.lte=" + ticketPrice; 
 
-        var datetimeStart = datetimeStart;
+        
+        
+        if (datetimeStart){
+          var datetimeStart = datetimeStart;  
+          var datetimeEnd = datetimeEnd;
+          
+        }
+        else {
+          var datetimeStart = moment().format('MM-DD-YYYY');
+          var datetimeEnd = moment().add(1, 'd').format('MM-DD-YYYY');
+        }
         var datetimeStartString = "&datetime_local.gte=" + datetimeStart;
-
-        var datetimeEnd = datetimeEnd;
-        var datetimeEndString = "&datetime_local.lte=" + datetimeEnd;
-
+        var datetimeEndString = "&datetime_local.lte=" + datetimeEnd;                
         var datetimeTodayString = "&datetime_local.gt=" + datetimeStart;
 
         var taxonomy = "concert";
         var taxonomyString = "&taxonomies.name=" + taxonomy;
 
         var genre = genre;
-        var genreString = "&genres.slug=" +genre;
-        
+        if (genre){
+          var genreString = "&genres.slug=" +genre;
+        }
+        else genreString = "";
+
         if (datetimeStart === datetimeEnd) {
 
           datetimeEnd = (moment(datetimeStart).add(1, 'd').format('MM-DD-YYYY'));
@@ -178,7 +190,6 @@
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-            console.log(response);
             console.log(response);
             for (i = 0; i < response.events.length; i++){
               var genreGen = response.events[i].performers[0].genres[0].name;
