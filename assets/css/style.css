@@ -1,3 +1,4 @@
+
 body {
     margin: 0 auto !important;
     background-color: #ffffff;
@@ -5,6 +6,22 @@ body {
     background-repeat: repeat;
     line-height:1.2;
 }
+    .flexy {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-evenly;
+        align-items: center;
+        padding-left: 1px;
+    }
+    
+    /* .row.main-content {
+        margin: 0 auto;
+    } */
+    nav.nav-wrapper.valign-wrapper.blue-grey.lighten-2 {
+        z-index: 10000;
+        padding-top:1em;
+    }
 
 #fountainTextG{
 	width:870px;
@@ -233,6 +250,7 @@ input#searchBox {
 .rightMain {
     margin-left: 0;
     margin-right: 50%;
+
 }
 
 .dropOpt {

@@ -100,6 +100,8 @@ $(document).ready(function () {
       }
       genreTerm = formData.get('genreSelect');
       priceTerm = formData.get('priceSelect');
+      $("table tbody").empty();
+
       getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);
     });
     
@@ -182,7 +184,6 @@ $(document).ready(function () {
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-            console.log(response);
             console.log(response);
             for (i = 0; i < response.events.length; i++){
               var genreGen = response.events[i].performers[0].genres[0].name;
