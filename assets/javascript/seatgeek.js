@@ -40,6 +40,11 @@ function changeVideo(eventTitle){
   });
 };
 
+//function to reload page
+function reload(){
+  Location.reload()
+}
+
 // This function creates an <iframe> (and YouTube player) after the API code downloads.
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
