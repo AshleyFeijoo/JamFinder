@@ -16,7 +16,11 @@ body {
         align-items: center;
         padding-left: 1px;
     }
-    
+	
+	
+	#jamBtn{
+		margin-top:2em;
+	}
     /* .row.main-content {
         margin: 0 auto;
     } */
@@ -47,7 +51,9 @@ a:active{
 }
 
 .mainDiv{
-    border-radius:10px;
+    border-radius:5px;
+    background-color:grey!important;
+    border-bottom: lightgrey solid 1px;
 }
 
 .fountainTextG{
@@ -219,9 +225,7 @@ nav.nav-wrapper.valign-wrapper.blue-grey.lighten-2 {
 
 .select-wrapper input.select-dropdown {
     border-bottom: none;
-    color:rgba(255, 255, 255, 0.61);
-
-    font-size: small;
+    color:#eee;
     margin-bottom: 0;
 }
 
@@ -257,7 +261,18 @@ input#searchBox {
 
 .dropOpt {
     /* margin-left: 2em !important; */
-    border-radius: .5em;
+    border-radius: .3em;
+    font-size:1.2em;
+    padding-left:0;
+}
+
+.brand-logo{
+    width:10%;
+    height:10%;
+}
+
+h1.allowPls.black-text {
+    padding: 1em;
 }
 
 .tableRow {
@@ -303,4 +318,13 @@ h4.results.align-center {
     background-image: url('../images/yt_icon_mono_light.png');
     background-repeat: no-repeat;
     background-position: 50% 50%;
+}
+
+
+.helpDiv{
+    margin-top:1em; margin-right:1em;
+}
+
+.nav-wrapper{
+    border-bottom: teal 1px solid;
 }
