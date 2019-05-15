@@ -21,7 +21,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function changeVideo(eventTitle){
   $('#player').show();
   // console.log(eventTitle);
-  var API_KEY = "AIzaSyBK6-Db-h05rWO-U0kK45O131PXwM3ONzI";
+  var API_KEY = "AIzaSyCA1xrbUcz6MkJRSYxuYscC2Wh-JZwxKUo";
   var q = eventTitle;
   var part = "snippet";
   var type = "video";
@@ -43,7 +43,7 @@ function changeVideo(eventTitle){
 // This function creates an <iframe> (and YouTube player) after the API code downloads.
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '350px',
+    height: '400px',
     width: 100 + '%',
     videoId: "videoToPlay",
    class: "video-container",
