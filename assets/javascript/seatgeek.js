@@ -1,25 +1,89 @@
 
-      // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+  // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
 
-    var latStart;
-    var lonStart;
-    var numPages = 1;
-    var genreTerm;
-    var priceTerm;
-    var startDateTerm;
-    var endDateTerm;
+var latStart;
+var lonStart;
+var numPages = 1;
+var genreTerm;
+var priceTerm;
+var startDateTerm;
+var endDateTerm;
+var player;
+
+//load the IFrame Player API code asynchronously
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// Function to change video 
+function changeVideo(eventTitle){
+  $('#player').show();
+  // console.log(eventTitle);
+  var API_KEY = "AIzaSyBK6-Db-h05rWO-U0kK45O131PXwM3ONzI";
+  var q = eventTitle;
+  var part = "snippet";
+  var type = "video";
+  var baseURL = "https://www.googleapis.com/youtube/v3/search";
+  var queryURL = baseURL + "?" + "part=" + part + "&q=" + q + "&type=" + type + "&key=" + API_KEY;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+    var videoToPlay = response.items[0].id.videoId;
+    // console.log(videoToPlay);
+    // I think this may be an embedded text
+    player.loadVideoById(videoToPlay);
+  });
+};
+
+// This function creates an <iframe> (and YouTube player) after the API code downloads.
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '350px',
+    width: 100 + '%',
+    videoId: "videoToPlay",
+   class: "video-container",
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+// The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+// The API calls this function when the player's state changes.
+// The function indicates that when playing a video (state=1),
+// the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    // setTimeout(stopVideo, 6000);
+    done = true;
+  }
+}
+function stopVideo() {
+  player.stopVideo();
+}
+
+// End Ellen YoutTube Video
 
 
-
-    // var ytVideo = $("<iframe/>");
-    // ytVideo.attr({
-    //   width: 50 + '%',
-    //   height: 50 + '%',
-    //   src: 'https://www.youtube.com/embed/E6RGMRamAFk',
-    //   frameborder: 0
-    // });
-    // var ytvidNew = $("#player").append(ytVideo);  
-    // $('#youtubeDiv').append(ytvidNew);
+  // var ytVideo = $("<iframe/>");
+  // ytVideo.attr({
+  //   width: 50 + '%',
+  //   height: 50 + '%',
+  //   src: 'https://www.youtube.com/embed/E6RGMRamAFk',
+  //   frameborder: 0
+  // });
+  // var ytvidNew = $("#player").append(ytVideo);  
+  // $('#youtubeDiv').append(ytvidNew);
 
   function getLocation() {
   if (navigator.geolocation) {
@@ -49,17 +113,20 @@
     }
 $(document).ready(function () { 
       getLocation();
+      $('.tap-target').tapTarget();
       $('select').formSelect();
       $('#youtubeDiv').hide();
       $('#mainForm').hide();
       $('#resultsDiv').hide()
       $('.tableRow').hide();
       $('#spinner').show()
+      $('#player').hide();
     
     $('form').submit(function(evt) {
       $('#youtubeDiv').show();
       $('#resultsDiv').show();
       $('.tableRow').show();
+   
       evt.preventDefault();
       formData= new FormData(evt.target);
       console.log(formData);
@@ -225,8 +292,11 @@ $(document).ready(function () {
               } else {
                 eventAveragePrice = "$" + response.events[i].stats.average_price;
               }
-              // artistNames.push(eventTitle);
-              var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName + "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td id='artistsName'>" + eventTitle + "</td><td>" + eventAveragePrice  +'<td><a href="'+' ' + '"><img src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></a></td>';
+              var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName +
+                "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td id='artistsName'>" +
+                eventTitle + "</td><td>" + eventAveragePrice +
+                '<td><img onClick="changeVideo(\'' + eventTitle + '\')" src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></td>';
+              
               $("table tbody").append(tableLineData);
             };
         });
