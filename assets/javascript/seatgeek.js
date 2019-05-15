@@ -11,6 +11,7 @@ var endDateTerm;
 var player;
 
 $('#dateSelect').css('color','gray');
+
 //load the IFrame Player API code asynchronously
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -21,7 +22,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function changeVideo(eventTitle){
   $('#player').show();
   // console.log(eventTitle);
-  var API_KEY = "AIzaSyDgwxcJi9wsM2wsHZUnWo41zlV44zpIsXk";
+  var API_KEY = "AIzaSyBDl0SaDnpnhP7TrxEnPAaXKFIKWHQuUoA";
   var q = eventTitle;
   var part = "snippet";
   var type = "video";
@@ -36,7 +37,6 @@ function changeVideo(eventTitle){
     console.log(response);
     var videoToPlay = response.items[0].id.videoId;
     // console.log(videoToPlay);
-    // I think this may be an embedded text
     player.loadVideoById(videoToPlay);
   });
 };
@@ -74,18 +74,6 @@ function stopVideo() {
   player.stopVideo();
 }
 
-// End Ellen YoutTube Video
-
-
-  // var ytVideo = $("<iframe/>");
-  // ytVideo.attr({
-  //   width: 50 + '%',
-  //   height: 50 + '%',
-  //   src: 'https://www.youtube.com/embed/E6RGMRamAFk',
-  //   frameborder: 0
-  // });
-  // var ytvidNew = $("#player").append(ytVideo);  
-  // $('#youtubeDiv').append(ytvidNew);
 
   function getLocation() {
   if (navigator.geolocation) {
@@ -114,12 +102,7 @@ function stopVideo() {
     }
 
     function paginationNextFunction() {
-      
-
-      // numPages++
-      // console.log(range);
-      // console.log(numPages);
-      // getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);    
+       
     }
 $(document).ready(function () { 
       getLocation();
@@ -139,10 +122,6 @@ $(document).ready(function () {
    
       evt.preventDefault();
       formData= new FormData(evt.target);
-      console.log(formData);
-      console.log(formData.get('dateSelect'));
-      console.log(formData.get('genreSelect'));
-      console.log(formData.get('priceSelect'));
     
       //Dates parsed here 
       switch (formData.get('dateSelect')){
