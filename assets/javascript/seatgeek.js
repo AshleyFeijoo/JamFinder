@@ -10,6 +10,8 @@ var startDateTerm;
 var endDateTerm;
 var player;
 
+$('#dateSelect').css('color','gray');
+
 //load the IFrame Player API code asynchronously
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -20,7 +22,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function changeVideo(eventTitle){
   $('#player').show();
   // console.log(eventTitle);
-  var API_KEY = "AIzaSyCA1xrbUcz6MkJRSYxuYscC2Wh-JZwxKUo";
+  var API_KEY = "AIzaSyBDl0SaDnpnhP7TrxEnPAaXKFIKWHQuUoA";
   var q = eventTitle;
   var part = "snippet";
   var type = "video";
@@ -35,20 +37,14 @@ function changeVideo(eventTitle){
     console.log(response);
     var videoToPlay = response.items[0].id.videoId;
     // console.log(videoToPlay);
-    // I think this may be an embedded text
     player.loadVideoById(videoToPlay);
   });
 };
 
-//function to reload page
-function reload(){
-  Location.reload()
-}
-
 // This function creates an <iframe> (and YouTube player) after the API code downloads.
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '400px',
+    height: '350px',
     width: 100 + '%',
     videoId: "videoToPlay",
    class: "video-container",
@@ -78,9 +74,6 @@ function stopVideo() {
   player.stopVideo();
 }
 
-// End Ellen YoutTube Video
-
-
 
   function getLocation() {
   if (navigator.geolocation) {
@@ -109,12 +102,7 @@ function stopVideo() {
     }
 
     function paginationNextFunction() {
-      
-
-      // numPages++
-      // console.log(range);
-      // console.log(numPages);
-      // getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);    
+       
     }
 $(document).ready(function () { 
       getLocation();
@@ -134,10 +122,6 @@ $(document).ready(function () {
    
       evt.preventDefault();
       formData= new FormData(evt.target);
-      console.log(formData);
-      console.log(formData.get('dateSelect'));
-      console.log(formData.get('genreSelect'));
-      console.log(formData.get('priceSelect'));
     
       //Dates parsed here 
       switch (formData.get('dateSelect')){
@@ -193,8 +177,6 @@ $(document).ready(function () {
         var baseURL = "https://api.seatgeek.com/2/"; 
         var endpoint = "events";
 
-        var listings = "&per_page=25&page=1"
-    
         var lat = lat;
         var latString = "&lat=" + lat
 
@@ -240,14 +222,14 @@ $(document).ready(function () {
 
           queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret="
             + client_secret + latString + lonString + rangeString + ticketPriceString
-            + datetimeTodayString + "&datetime_local.lt=" + datetimeEnd+ taxonomyString +genreString+ listings; 
+            + datetimeTodayString + "&datetime_local.lt=" + datetimeEnd+ taxonomyString +genreString; 
         }
         
         else {
 
           queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret="
           + client_secret + latString + lonString + rangeString + ticketPriceString
-          + datetimeStartString + datetimeEndString + taxonomyString + genreString + listings; 
+          + datetimeStartString + datetimeEndString + taxonomyString + genreString;
         }
 
         console.log ("price string:" + ticketPriceString);
@@ -302,7 +284,6 @@ $(document).ready(function () {
               var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName +
                 "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td id='artistsName'>" +
                 eventTitle + "</td><td>" + eventAveragePrice +
-
                 '<td><img onClick="changeVideo(\'' + eventTitle + '\')" class=" hoverable" src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></td>';
 
                 
