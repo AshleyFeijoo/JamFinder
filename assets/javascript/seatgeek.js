@@ -307,6 +307,7 @@ $(document).ready(function () {
               var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName +
                 "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td id='artistsName'>" +
                 eventTitle + "</td><td>" + eventAveragePrice +
+
                 '<td><img onClick="changeVideo(\'' + eventTitle + '\')" class=" hoverable" src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></td>';
 
                 
