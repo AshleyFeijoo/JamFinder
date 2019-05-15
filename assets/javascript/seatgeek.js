@@ -21,7 +21,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function changeVideo(eventTitle){
   $('#player').show();
   // console.log(eventTitle);
-  var API_KEY = "AIzaSyBK6-Db-h05rWO-U0kK45O131PXwM3ONzI";
+  var API_KEY = "AIzaSyDgwxcJi9wsM2wsHZUnWo41zlV44zpIsXk";
   var q = eventTitle;
   var part = "snippet";
   var type = "video";
