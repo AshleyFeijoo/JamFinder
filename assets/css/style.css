@@ -282,20 +282,21 @@ input#searchBox {
 }
 
 h1.allowPls.black-text {
-    padding: 1em;
+	padding: 1em;
+	font-size: 2em;
 }
 
 .tableRow {
     padding: 1em;
 }
 
+
+
 .begin{
 	border-radius:10px;
-}
-.begin,
-#spinner{
-    margin: 0 auto!important;
-    text-align: center!important;
+	width:70vw;
+	margin: 0 auto;
+	text-align:center
 }
 
 table.highlight tbody tr:hover {

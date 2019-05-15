@@ -10,7 +10,6 @@ var startDateTerm;
 var endDateTerm;
 var player;
 
-$('#dateSelect').css('color','gray');
 //load the IFrame Player API code asynchronously
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -76,15 +75,6 @@ function stopVideo() {
 // End Ellen YoutTube Video
 
 
-  // var ytVideo = $("<iframe/>");
-  // ytVideo.attr({
-  //   width: 50 + '%',
-  //   height: 50 + '%',
-  //   src: 'https://www.youtube.com/embed/E6RGMRamAFk',
-  //   frameborder: 0
-  // });
-  // var ytvidNew = $("#player").append(ytVideo);  
-  // $('#youtubeDiv').append(ytvidNew);
 
   function getLocation() {
   if (navigator.geolocation) {
