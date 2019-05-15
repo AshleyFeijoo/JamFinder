@@ -257,9 +257,14 @@ input#searchBox {
 
 .dropOpt {
     /* margin-left: 2em !important; */
-    border-radius: .5em;
+    border-radius: .3em;
     font-size:1.2em;
     padding-left:0;
+}
+
+.brand-logo{
+    width:10%;
+    height:10%;
 }
 
 .tableRow {
