@@ -10,7 +10,6 @@ var startDateTerm;
 var endDateTerm;
 var player;
 
-$('#dateSelect').css('color','gray');
 //load the IFrame Player API code asynchronously
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -21,7 +20,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function changeVideo(eventTitle){
   $('#player').show();
   // console.log(eventTitle);
-  var API_KEY = "AIzaSyBK6-Db-h05rWO-U0kK45O131PXwM3ONzI";
+  var API_KEY = "AIzaSyCA1xrbUcz6MkJRSYxuYscC2Wh-JZwxKUo";
   var q = eventTitle;
   var part = "snippet";
   var type = "video";
@@ -41,10 +40,15 @@ function changeVideo(eventTitle){
   });
 };
 
+//function to reload page
+function reload(){
+  Location.reload()
+}
+
 // This function creates an <iframe> (and YouTube player) after the API code downloads.
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '350px',
+    height: '400px',
     width: 100 + '%',
     videoId: "videoToPlay",
    class: "video-container",
@@ -77,15 +81,6 @@ function stopVideo() {
 // End Ellen YoutTube Video
 
 
-  // var ytVideo = $("<iframe/>");
-  // ytVideo.attr({
-  //   width: 50 + '%',
-  //   height: 50 + '%',
-  //   src: 'https://www.youtube.com/embed/E6RGMRamAFk',
-  //   frameborder: 0
-  // });
-  // var ytvidNew = $("#player").append(ytVideo);  
-  // $('#youtubeDiv').append(ytvidNew);
 
   function getLocation() {
   if (navigator.geolocation) {
