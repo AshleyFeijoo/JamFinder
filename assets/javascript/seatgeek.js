@@ -1,16 +1,6 @@
 
   // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
 
-<<<<<<< HEAD
-    var latStart;
-    var lonStart;
-    var numPages = 1;
-    var genreTerm;
-    var priceTerm;
-    var startDateTerm;
-    var endDateTerm;
-    
-=======
 var latStart;
 var lonStart;
 var numPages = 1;
@@ -19,7 +9,6 @@ var priceTerm;
 var startDateTerm;
 var endDateTerm;
 var player;
->>>>>>> 2b3782d2a8285ec2ab095aec797839215a386df4
 
 //load the IFrame Player API code asynchronously
 var tag = document.createElement('script');
@@ -29,6 +18,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // Function to change video 
 function changeVideo(eventTitle){
+  $('#player').show();
   // console.log(eventTitle);
   var API_KEY = "AIzaSyBK6-Db-h05rWO-U0kK45O131PXwM3ONzI";
   var q = eventTitle;
@@ -52,9 +42,10 @@ function changeVideo(eventTitle){
 // This function creates an <iframe> (and YouTube player) after the API code downloads.
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '390',
-    width: '640',
+    height: '350px',
+    width: 100 + '%',
     videoId: "videoToPlay",
+   class: "video-container",
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
@@ -129,11 +120,13 @@ $(document).ready(function () {
       $('#resultsDiv').hide()
       $('.tableRow').hide();
       $('#spinner').show()
+      $('#player').hide();
     
     $('form').submit(function(evt) {
       $('#youtubeDiv').show();
       $('#resultsDiv').show();
       $('.tableRow').show();
+   
       evt.preventDefault();
       formData= new FormData(evt.target);
       console.log(formData);
@@ -304,6 +297,7 @@ $(document).ready(function () {
                 eventTitle + "</td><td>" + eventAveragePrice +
                 '<td><img onClick="changeVideo(\'' + eventTitle + '\')" src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></td>';
 
+                
               $("table tbody").append(tableLineData);
             };
         });

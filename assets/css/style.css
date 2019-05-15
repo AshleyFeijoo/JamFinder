@@ -16,7 +16,11 @@ body {
         align-items: center;
         padding-left: 1px;
     }
-    
+	
+	
+	#jamBtn{
+		margin-top:2em;
+	}
     /* .row.main-content {
         margin: 0 auto;
     } */
@@ -265,6 +269,10 @@ input#searchBox {
 .brand-logo{
     width:10%;
     height:10%;
+}
+
+h1.allowPls.black-text {
+    padding: 1em;
 }
 
 .tableRow {
