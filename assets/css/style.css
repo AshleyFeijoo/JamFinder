@@ -5,21 +5,19 @@ body {
     background-image: url('../images/gplaypattern.png');
     background-repeat: repeat;
     line-height:1.2;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif!important;
 
 }
-    .flexy {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-content: space-evenly;
-        align-items: center;
-        padding-left: 1px;
-    }
-	
+
+
+.select{
+	font-variant: all-petite-caps!important;
+}
 	
 	#jamBtn{
 		margin-top:2em;
+		font-family: 'Josefin Sans', sans-serif;
+
 	}
     /* .row.main-content {
         margin: 0 auto;
@@ -29,6 +27,9 @@ body {
         padding-top:1em;
     }
 
+	.hoverable{
+		cursor:pointer;
+	}
 #fountainTextG{
 	width:870px;
 	margin:auto;
@@ -47,13 +48,19 @@ a:active{
 
 .tbhead{
     font-size: 1.5em;
-    text-decoration: underline
+	text-decoration: underline;
+	font-variant-caps:all-petite-caps;
 }
 
 .mainDiv{
     border-radius:5px;
     background-color:grey!important;
-    border-bottom: lightgrey solid 1px;
+	border-bottom: lightgrey solid 1px;
+	margin-top:1em;
+}
+
+.wrap{
+
 }
 
 .fountainTextG{
@@ -225,8 +232,11 @@ nav.nav-wrapper.valign-wrapper.blue-grey.lighten-2 {
 
 .select-wrapper input.select-dropdown {
     border-bottom: none;
-    color:#eee;
-    margin-bottom: 0;
+    color:rgba(238, 238, 238, 0.849);
+	margin-bottom: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	font-variant-caps: all-petite-caps;
+
 }
 
 form{
@@ -279,6 +289,9 @@ h1.allowPls.black-text {
     padding: 1em;
 }
 
+.begin{
+	border-radius:10px;
+}
 .begin,
 #spinner{
     margin: 0 auto!important;
@@ -287,6 +300,10 @@ h1.allowPls.black-text {
 
 table.highlight tbody tr:hover {
     background-color: #eee !important;
+}
+
+select{
+	color:orange!important;
 }
 
 #resultsDiv{
@@ -301,7 +318,8 @@ table.highlight tbody tr:hover {
         background:
           linear-gradient(156deg, rgb(142, 206, 203)(177.1, 33.33%, 41.81%, 1) 0%, hsla(177.1, 33.33%, 41.81%, 0) 65%),
           linear-gradient(315deg, hsla(173.21, 100%, 93.23%, 1) 15%, hsla(173.21, 100%, 93.23%, 0) 80%);
-        
+		
+		  font-variant-caps: all-petite-caps;
 
 }
 
@@ -311,7 +329,8 @@ h4.results.align-center {
     padding-top: .5em;
     padding-bottom: .5em;
     border-top: rgba(139, 139, 139, 0.493) solid 1px;
-    border-bottom: rgba(139, 139, 139, 0.493) solid 1px;
+	border-bottom: rgba(139, 139, 139, 0.493) solid 1px;
+	font-variant-caps: all-small-caps;
 }
 
 .ytbtn{
@@ -326,5 +345,13 @@ h4.results.align-center {
 }
 
 .nav-wrapper{
-    border-bottom: teal 1px solid;
+	border-bottom: teal 1px solid;
+	background-color:rgb(17, 17, 17);
+		height: 120%!important;
+		margin-bottom:1em;
+
+}
+tr {
+	font-variant-caps: all-petite-caps;
+	font-size:1.3em;
 }

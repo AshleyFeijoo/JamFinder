@@ -10,6 +10,7 @@ var startDateTerm;
 var endDateTerm;
 var player;
 
+$('#dateSelect').css('color','gray');
 //load the IFrame Player API code asynchronously
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -25,7 +26,8 @@ function changeVideo(eventTitle){
   var part = "snippet";
   var type = "video";
   var baseURL = "https://www.googleapis.com/youtube/v3/search";
-  var queryURL = baseURL + "?" + "part=" + part + "&q=" + q + "&type=" + type + "&key=" + API_KEY;
+  var numberResults = "2";
+  var queryURL = baseURL + "?" + "part=" + part + "&q=" + q + "&type=" + type + "&maxResults=" + numberResults +"&key=" + API_KEY;
 
   $.ajax({
     url: queryURL,
@@ -105,11 +107,19 @@ function stopVideo() {
       console.log(latStart);
     }
 
+    function tryAgain(){
+      $("table tbody").empty();
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      $('#player').hide();
+    }
+
     function paginationNextFunction() {
-      numPages++
-      console.log(range);
-      console.log(numPages);
-      getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);    
+      
+
+      // numPages++
+      // console.log(range);
+      // console.log(numPages);
+      // getConcertByLatLon(latStart, lonStart, "200mi", priceTerm, startDateTerm, endDateTerm, genreTerm);    
     }
 $(document).ready(function () { 
       getLocation();
@@ -240,7 +250,7 @@ $(document).ready(function () {
 
           queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret="
           + client_secret + latString + lonString + rangeString + ticketPriceString
-          + datetimeStartString + datetimeEndString + taxonomyString + genreString; 
+          + datetimeStartString + datetimeEndString + taxonomyString + genreString;
         }
 
         console.log ("price string:" + ticketPriceString);
@@ -295,8 +305,10 @@ $(document).ready(function () {
               var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName +
                 "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td id='artistsName'>" +
                 eventTitle + "</td><td>" + eventAveragePrice +
-                '<td><img onClick="changeVideo(\'' + eventTitle + '\')" src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></td>';
-              
+
+                '<td><img onClick="changeVideo(\'' + eventTitle + '\')" class=" hoverable" src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></td>';
+
+                
               $("table tbody").append(tableLineData);
             };
         });
