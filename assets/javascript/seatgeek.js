@@ -25,7 +25,8 @@ function changeVideo(eventTitle){
   var part = "snippet";
   var type = "video";
   var baseURL = "https://www.googleapis.com/youtube/v3/search";
-  var queryURL = baseURL + "?" + "part=" + part + "&q=" + q + "&type=" + type + "&key=" + API_KEY;
+  var numberResults = "2";
+  var queryURL = baseURL + "?" + "part=" + part + "&q=" + q + "&type=" + type + "&maxResults=" + numberResults +"&key=" + API_KEY;
 
   $.ajax({
     url: queryURL,
