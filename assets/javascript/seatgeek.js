@@ -198,6 +198,8 @@ $(document).ready(function () {
         var baseURL = "https://api.seatgeek.com/2/"; 
         var endpoint = "events";
 
+        var listings = "&per_page=25&page=1"
+    
         var lat = lat;
         var latString = "&lat=" + lat
 
@@ -243,14 +245,14 @@ $(document).ready(function () {
 
           queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret="
             + client_secret + latString + lonString + rangeString + ticketPriceString
-            + datetimeTodayString + "&datetime_local.lt=" + datetimeEnd+ taxonomyString +genreString; 
+            + datetimeTodayString + "&datetime_local.lt=" + datetimeEnd+ taxonomyString +genreString+ listings; 
         }
         
         else {
 
           queryURL = baseURL + endpoint + "/?client_id=" + client_id + "&client_secret="
           + client_secret + latString + lonString + rangeString + ticketPriceString
-          + datetimeStartString + datetimeEndString + taxonomyString + genreString;
+          + datetimeStartString + datetimeEndString + taxonomyString + genreString + listings; 
         }
 
         console.log ("price string:" + ticketPriceString);
@@ -305,6 +307,7 @@ $(document).ready(function () {
               var tableLineData = "<tr><td>" + "<a href=" + eventUrl + ">" + venueName +
                 "</a>" + "</td><td>" + date + "</td><td>" + timez + "</td><td id='artistsName'>" +
                 eventTitle + "</td><td>" + eventAveragePrice +
+
                 '<td><img onClick="changeVideo(\'' + eventTitle + '\')" class=" hoverable" src="./assets/images/yt_icon_mono_light.png" style="width: 2em; height: 2em;"/></td>';
 
                 
